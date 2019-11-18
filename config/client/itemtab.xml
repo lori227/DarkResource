@@ -1,0 +1,6 @@
+<root version="826">
+	<item Id="1" Tab="drug" Pic="Item_Consumables" UIStrKey="ITEM_CONSUMABLES"/>
+	<item Id="2" Tab="material" Pic="Item_Building" UIStrKey="ITEM_BUILDING"/>
+	<item Id="3" Tab="gift" Pic="Item_Gift" UIStrKey="ITEM_GIFT"/>
+	<item Id="4" Tab="normal" Pic="Item_Common" UIStrKey="ITEM_COMMON"/>
+</root>

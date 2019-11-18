@@ -1,0 +1,13 @@
+<root version="941">
+	<item Id="200" BuildListInfoKey="BuildListInfo_MainCamp" BuildInfoIcon="BuildInfo_MainCamp" BuildIcon="BuildIcon_MainCamp"/>
+	<item Id="201" BuildListInfoKey="BuildListInfo_Recruit" BuildInfoIcon="BuildInfo_Recruit" BuildIcon="BuildIcon_Recruit"/>
+	<item Id="202" BuildListInfoKey="BuildListInfo_Medical" BuildInfoIcon="BuildInfo_Medical" BuildIcon="BuildIcon_Medical"/>
+	<item Id="203" BuildListInfoKey="BuildListInfo_Train" BuildInfoIcon="BuildInfo_Train" BuildIcon="BuildIcon_Train"/>
+	<item Id="204" BuildListInfoKey="BuildListInfo_Music" BuildInfoIcon="BuildInfo_Music" BuildIcon="BuildIcon_Music"/>
+	<item Id="205" BuildListInfoKey="BuildListInfo_Smithy" BuildInfoIcon="BuildInfo_Smithy" BuildIcon="BuildIcon_Smithy"/>
+	<item Id="206" BuildListInfoKey="BuildListInfo_Shop" BuildInfoIcon="BuildInfo_Shop" BuildIcon="BuildIcon_Shop"/>
+	<item Id="207" BuildListInfoKey="BuildListInfo_Inherit" BuildInfoIcon="BuildInfo_Inherit" BuildIcon="BuildIcon_Inherit"/>
+	<item Id="208" BuildListInfoKey="BuildListInfo_HeroChancel" BuildInfoIcon="BuildInfo_HeroChancel" BuildIcon="BuildIcon_HeroChancel"/>
+	<item Id="209" BuildListInfoKey="BuildListInfo_Outer" BuildInfoIcon="BuildInfo_Outer" BuildIcon="BuildIcon_Outer"/>
+	<item Id="210" BuildListInfoKey="BuildListInfo_Warehouse" BuildInfoIcon="BuildInfo_Warehouse" BuildIcon="BuildIcon_Warehouse"/>
+</root>

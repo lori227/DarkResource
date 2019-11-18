@@ -1,0 +1,5 @@
+<root version="0">
+	<item Name="maxitemcount" Value="100"/>
+	<item Name="maxstoragecount" Value="999"/>
+	<item Name="useitemindex" Value="1"/>
+</root>

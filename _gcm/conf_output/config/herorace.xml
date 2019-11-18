@@ -1,0 +1,5 @@
+<root version="941">
+	<item Attr_atk="114" Id="1601" Attr_maxhp="146" Sex="1" SurName="11" FirstName="101|101" Attr_def="26" Attr_res="10" Attr_tal="52" Attr_spd="50" Attr_luk="10"/>
+	<item Attr_atk="100" Id="1602" Attr_maxhp="140" SurName="11" FirstName="101|101" Attr_def="18" Attr_res="28" Attr_tal="96" Attr_spd="50" Attr_luk="64"/>
+	<item Attr_atk="90" Id="1603" Attr_maxhp="126" SurName="11" FirstName="101|101" Attr_def="14" Attr_res="36" Attr_tal="126" Attr_spd="84" Attr_luk="30"/>
+</root>

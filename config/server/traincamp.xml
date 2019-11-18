@@ -1,0 +1,6 @@
+<root version="00000">
+	<item Id="1" Count="5" TotalTime="900" CdTime="30" AddExp="100" Consume="[{&quot;money&quot;:&quot;100&quot;}]" OnekeyConsume="[{&quot;money&quot;:&quot;10&quot;}]" UnitTime="20"/>
+	<item Id="2" Count="6" TotalTime="900" CdTime="30" AddExp="60" Consume="[{&quot;money&quot;:&quot;100&quot;}]" OnekeyConsume="[{&quot;money&quot;:&quot;10&quot;}]" UnitTime="20"/>
+	<item Id="3" Count="7" TotalTime="900" CdTime="30" AddExp="70" Consume="[{&quot;money&quot;:&quot;100&quot;}]" OnekeyConsume="[{&quot;money&quot;:&quot;10&quot;}]" UnitTime="20"/>
+	<item Id="4" Count="8" TotalTime="900" CdTime="30" AddExp="80" Consume="[{&quot;money&quot;:&quot;100&quot;}]" OnekeyConsume="[{&quot;money&quot;:&quot;10&quot;}]" UnitTime="20"/>
+</root>

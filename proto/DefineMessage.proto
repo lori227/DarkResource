@@ -1,0 +1,150 @@
+syntax = "proto3";
+import "FrameDefineMessage.proto";
+package KFMsg;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 匹配玩家
+message PBMatchPlayer
+{
+    // id
+    uint64 id = 1;  
+
+    // 名字
+    bytes name = 2;     
+
+    // 服务器id( 服务器使用 )
+    uint64 serverid = 3;
+
+    // 阵营
+    uint32 campid = 4;
+
+    // 英雄列表
+	map< uint64, PBObject > hero = 5;	
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 战斗结算信息
+message PBBalanceItem
+{
+    bytes name = 1;      // 名字
+    uint32 key = 2;      // 道具id
+    uint32 value = 3;    // 获得数值
+}
+
+message PBBalanceHero
+{
+    uint64 uuid = 1;			            // 英雄id
+    uint32 race = 2;                        // 种族
+    uint32 profession = 3;                  // 职业
+    uint32 sex = 4;                         // 性别
+    bytes name = 5;                         // 名字
+    uint32 exp = 6;                         // 获得的经验
+    uint32 level = 7;                       // 总升级数
+    bool death  = 8;                        // 是否死亡
+    map<string, uint32> attributes = 9;     // 属性列表
+    map<uint32, uint32> character = 20;     // 获得的性格( key=新性格 value=替换的性格( 0 表示没有 ) )
+}
+
+// 战斗结算数据
+message PBBalanceData
+{
+    repeated PBBalanceHero herodata = 1;    // 英雄数据
+    repeated PBBalanceItem itemdata = 2;    // 获得的金币.道具.等
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 战斗结算信息
+message PBBalanceItemServer
+{
+    bytes name = 1;             // 名字
+    uint32 key = 2;             // 道具id
+    uint32 beginvalue = 3;      // 起始数值
+    uint32 endvalue = 4;        // 最终数值
+}
+
+message PBBalanceHeroServer
+{
+    uint64 uuid = 1;			                // 英雄id
+    uint32 race = 2;                            // 种族
+    uint32 profession = 3;                      // 职业
+    uint32 sex = 4;                             // 性别
+    bytes name = 5;                             // 名字
+    uint32 beginexp = 6;                        // 起始经验
+    uint32 endexp = 7;                          // 最终经验
+    uint32 beginlevel = 8;                      // 起始等级
+    uint32 endlevel = 9;                        // 最终等级
+    bool death = 10;                            // 是否死亡
+    repeated uint64 killnpc = 11;               // 击杀npc列表
+    map<string, uint32> beginattributes = 12;   // 属性列表
+    map<string, uint32> endattributes = 13;     // 属性列表
+    map<uint32, uint32> character = 20;         // 获得的性格( key=新性格 value=替换的性格( 0 表示没有 ) )
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 英雄战斗数据
+message PBFighterHeroData
+{
+	uint64 uuid = 1;			// 英雄id
+	uint32 hp = 2;				// 当前hp
+	uint32 exp = 3;				// 经验
+    uint32 ep = 4;              // 当前ep
+}
+
+message PBExplorePlayerData
+{
+    int32 x = 1;
+    int32 y = 2;
+    int32 z = 3;
+    int32 yaw = 4;
+    uint32 step = 5;        // 没有计算的移动步数
+}
+
+message PBExploreNpcData
+{
+    bytes key = 1;
+    int32 x = 2;
+    int32 y = 3;
+    int32 z = 4;
+    int32 yaw = 5;
+    bool bkilled = 6;
+}
+
+message PBBuffData
+{
+    uint32 id = 1;      // buff id
+}
+
+message PBBuffListData
+{
+    repeated PBBuffData bufflist = 1;       // buff列表
+}
+
+message PBExploreBuffData
+{
+    map<uint64, PBBuffListData> buff = 1;       // <英雄uuid buff列表>
+}
+
+message PBExploreData
+{
+    bool save = 1;                              // 是否是保存数据
+    uint32 random = 2;                          // 随机数
+    uint32 faith = 3;                           // 信仰值
+    PBExplorePlayerData playerdata = 4;         // 玩家数据
+	map<string, PBExploreNpcData> npcdata = 5;  // npc数据
+    PBExploreBuffData buffdata = 6;             // buff数据
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 战斗结算数据
+message PBBalanceDataServer
+{
+    uint32 id = 1;                                // 探索地图id
+    bytes modulename = 2;                         // 模块名
+    uint64 moduleid = 3;                          // 模块id
+    uint32 status = 4;                            // 探索前的状态
+    repeated PBBalanceHeroServer herodata = 5;    // 英雄数据
+    repeated PBBalanceItemServer itemdata = 6;    // 获得的金币.道具.等
+    uint64 starttime = 7;                         // 开始时间
+    uint32 usetime = 8;                           // 使用时间( 单位: 秒 )
+    repeated uint64 killnpc = 9;                  // 击杀npc列表
+    PBExploreData exploredata = 99;               // 探索数据(客户端)
+}

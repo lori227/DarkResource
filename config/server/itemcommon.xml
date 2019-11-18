@@ -1,0 +1,20 @@
+<root version="93">
+	<item Id="501" Type="5" Quality="1" OverlayType="1" OverlayCount="999" UseCount="0" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000000" Type="1" Quality="1" OverlayType="1" OverlayCount="20" UseCount="0" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000001" Type="1" Quality="2" OverlayType="1" OverlayCount="100" UseCount="0" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000002" Type="1" Quality="3" OverlayType="1" OverlayCount="100" UseCount="0" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000003" Type="2" Quality="5" OverlayType="1" OverlayCount="1" UseCount="1" UseLimit="1" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000004" Type="2" Quality="4" OverlayType="1" OverlayCount="100" UseCount="1" UseLimit="1" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000005" Type="2" Quality="3" OverlayType="1" OverlayCount="100" UseCount="1" UseLimit="1" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000006" Type="3" Quality="1" OverlayType="1" OverlayCount="20" UseCount="1" UseLimit="2" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000007" Type="3" Quality="2" OverlayType="1" OverlayCount="100" UseCount="1" UseLimit="2" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000008" Type="3" Quality="3" OverlayType="1" OverlayCount="100" UseCount="1" UseLimit="2" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000009" Type="4" Quality="5" OverlayType="1" OverlayCount="1" UseCount="1" UseLimit="2" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000010" Type="4" Quality="4" OverlayType="1" OverlayCount="100" UseCount="1" UseLimit="2" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000011" Type="4" Quality="3" OverlayType="1" OverlayCount="100" UseCount="1" UseLimit="2" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000012" Type="4" Quality="2" OverlayType="1" OverlayCount="100" UseCount="1" UseLimit="2" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000013" Type="4" Quality="1" OverlayType="1" OverlayCount="100" UseCount="0" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000014" Type="1" Quality="1" OverlayType="1" OverlayCount="10" UseCount="0" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000015" Type="1" Quality="1" OverlayType="1" OverlayCount="20" UseCount="1" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+	<item Id="1000016" Type="1" Quality="1" OverlayType="1" OverlayCount="999" UseCount="1" UseLimit="0" Sell="[{&quot;money&quot;:&quot;1&quot;}]" />
+</root>

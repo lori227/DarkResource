@@ -1,0 +1,13 @@
+<root version="100">
+	<item Id="1" DropDataId="1" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="2" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="3" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="4" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="5" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="6" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="7" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="8" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="9" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="1" DropDataId="10" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="2" DropDataId="8" Weight="0" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+</root>

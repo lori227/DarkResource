@@ -1,0 +1,20 @@
+<root version="826">
+	<item Scale_y="1" _id="default" Position_x="-2800" Position_y="-520" Position_z="4100" Rotate_y="-45" Scale_x="1" Scale_z="1"/>
+	<item _id="min_y" Position_y="-2400"/>
+	<item _id="max_y" Position_y="800"/>
+	<item _id="min_x" Position_x="-3500"/>
+	<item _id="max_x" Position_x="-900"/>
+	<item _id="min_z" Position_z="2600"/>
+	<item _id="max_z" Position_z="5600"/>
+	<item Scale_y="1" _id="BuildName_Warehouse" Position_x="2197" Position_y="-2531" Position_z="1361" Rotate_x="-1" Rotate_y="-24" Rotate_z="-21" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Opera" Position_x="2254" Position_y="-3630" Position_z="594" Rotate_x="2" Rotate_y="20" Rotate_z="-71" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Inherit" Position_x="771" Position_y="-418" Position_z="906" Rotate_y="-24" Rotate_z="-17" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Cemetery" Position_x="-917" Position_y="-2788" Position_z="2150" Rotate_x="-2" Rotate_y="-32" Rotate_z="-38" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_MainCamp" Position_x="2547" Position_y="-292" Position_z="1615" Rotate_x="1" Rotate_y="-21" Rotate_z="41" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Smithy" Position_x="1196" Position_y="3468" Position_z="1044" Rotate_x="2" Rotate_y="-21" Rotate_z="-8" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Outer" Position_x="1000" Position_y="-1724" Position_z="1321" Rotate_x="-4" Rotate_y="-41" Rotate_z="-47" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Train" Position_x="-910" Position_y="3933" Position_z="1377" Rotate_x="2" Rotate_y="-28" Rotate_z="-42" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Medical" Position_x="853" Position_y="-157" Position_z="1473" Rotate_x="-3" Rotate_y="-26" Rotate_z="125" Scale_x="1" Scale_z="1"/>
+	<item Scale_y="1" _id="BuildName_Recruit" Position_x="735" Position_y="-766" Position_z="772" Rotate_y="-6" Rotate_z="-127" Scale_x="1" Scale_z="1"/>
+	<item _id="BuildName_Shop"/>
+</root>

@@ -1,0 +1,15 @@
+<root version="0">
+	<item Id="200" BuildNameKey="PositionName_RoleList"/>
+	<item Id="201" BuildNameKey="PositionName_Team" BuildIcon="PositionIcon_Team"/>
+	<item Id="202" BuildNameKey="BuildName_MainCamp" BuildOrder="1" BuildListInfoKey="BuildListInfo_MainCamp" BuildInfoIcon="BuildInfo_MainCamp" BuildIcon="BuildIcon_MainCamp" ClsName="CMilitaryAccountMediator" ListShow="1"/>
+	<item Id="203" BuildNameKey="BuildName_Recruit" BuildOrder="2" BuildListInfoKey="BuildListInfo_Recruit" BuildInfoIcon="BuildInfo_Recruit" BuildIcon="BuildIcon_Recruit" ClsName="CRecruitmentOfficeMediator" ListShow="1"/>
+	<item Id="204" BuildNameKey="BuildName_Medical" BuildOrder="3" BuildListInfoKey="BuildListInfo_Medical" BuildInfoIcon="BuildInfo_Medical" BuildIcon="BuildIcon_Medical" ListShow="1"/>
+	<item Id="205" BuildNameKey="BuildName_Train" BuildOrder="4" BuildListInfoKey="BuildListInfo_Train" BuildInfoIcon="BuildInfo_Train" BuildIcon="BuildIcon_Train" ClsName="CTrainingOfficeMediator" ListShow="1"/>
+	<item Id="206" BuildNameKey="BuildName_Music" BuildOrder="5" BuildListInfoKey="BuildListInfo_Music" BuildInfoIcon="BuildInfo_Music" BuildIcon="BuildIcon_Music" ListShow="1"/>
+	<item Id="207" BuildNameKey="BuildName_Smithy" BuildOrder="6" BuildListInfoKey="BuildListInfo_Smithy" BuildInfoIcon="BuildInfo_Smithy" BuildIcon="BuildIcon_Smithy" ListShow="1"/>
+	<item Id="208" BuildNameKey="BuildName_Shop" BuildOrder="7" BuildListInfoKey="BuildListInfo_Shop" BuildInfoIcon="BuildInfo_Shop" BuildIcon="BuildIcon_Shop" ListShow="1"/>
+	<item Id="209" BuildNameKey="BuildName_Inherit" BuildOrder="8" BuildListInfoKey="BuildListInfo_Inherit" BuildInfoIcon="BuildInfo_Inherit" BuildIcon="BuildIcon_Inherit" ListShow="1"/>
+	<item Id="210" BuildNameKey="BuildName_HeroChancel" BuildOrder="9" BuildListInfoKey="BuildListInfo_HeroChancel" BuildInfoIcon="BuildInfo_HeroChancel" BuildIcon="BuildIcon_HeroChancel" ListShow="1"/>
+	<item Id="211" BuildNameKey="BuildName_Outer" BuildOrder="10" BuildListInfoKey="BuildListInfo_Outer" BuildInfoIcon="BuildInfo_Outer" BuildIcon="BuildIcon_Outer" ListShow="1"/>
+	<item Id="212" BuildNameKey="BuildName_Warehouse" BuildOrder="11" BuildListInfoKey="BuildListInfo_Warehouse" BuildInfoIcon="BuildInfo_Warehouse" BuildIcon="BuildIcon_Warehouse" ClsName="CBagMediator" ListShow="1"/>
+</root>

@@ -1,0 +1,13 @@
+<root version="132">
+	<item Id="1" Order="1" Weight="0" Event="1" LogicId="1" FinishEvent="0" DropGroup="" />
+	<item Id="1" Order="2" Weight="0" Event="2" LogicId="1" FinishEvent="0" DropGroup="" />
+	<item Id="1" Order="3" Weight="0" Event="3" LogicId="1" FinishEvent="999998" DropGroup="" />
+	<item Id="1" Order="4" Weight="0" Event="4" LogicId="2" FinishEvent="0" DropGroup="" />
+	<item Id="1" Order="5" Weight="0" Event="5" LogicId="2" FinishEvent="0" DropGroup="" />
+	<item Id="1" Order="6" Weight="0" Event="6" LogicId="2" FinishEvent="999998" DropGroup="" />
+	<item Id="1" Order="7" Weight="0" Event="7" LogicId="3" FinishEvent="0" DropGroup="" />
+	<item Id="1" Order="8" Weight="0" Event="8" LogicId="3" FinishEvent="0" DropGroup="" />
+	<item Id="1" Order="9" Weight="0" Event="9" LogicId="3" FinishEvent="999998" DropGroup="2:10000" />
+	<item Id="2" Order="1" Weight="100" Event="10" LogicId="4" FinishEvent="999999" DropGroup="" />
+	<item Id="2" Order="1" Weight="100" Event="11" LogicId="4" FinishEvent="999999" DropGroup="" />
+</root>

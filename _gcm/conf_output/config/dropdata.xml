@@ -1,0 +1,9 @@
+<root version="941">
+	<item Id="1" DropName="item" DropKey="1000007" DropValue="1" Weight="100"/>
+	<item Id="1" DropName="item" DropKey="1000001" DropValue="10-200" Weight="100"/>
+	<item Id="1" DropName="money" DropValue="100" Weight="100"/>
+	<item Id="2" DropName="money" DropValue="200" Weight="100"/>
+	<item Id="2" DropName="item" DropKey="1000002" DropValue="1" Weight="100"/>
+	<item Id="3" DropName="exp" DropValue="10" Weight="100"/>
+	<item Id="4" DropName="exp" DropValue="50" Weight="100"/>
+</root>

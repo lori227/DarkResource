@@ -1,0 +1,6 @@
+<root version="826">
+	<item Id="1" ExpireType="1" ExpireNum="3"/>
+	<item Id="2" ExpireType="1" ExpireNum="4"/>
+	<item Id="3" ExpireType="2" ExpireNum="200"/>
+	<item Id="4"/>
+</root>

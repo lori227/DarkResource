@@ -1,0 +1,508 @@
+syntax = "proto3";
+import "DefineMessage.proto";
+import "FrameDefineMessage.proto";
+package KFMsg;
+
+// 协议号区间 : 3000-10000
+enum ClientProtocol
+ {
+	MSG_CLIENT_BEGIN 				= 0;	// pb3 需要0
+
+	// match
+	MSG_START_MATCH_REQ  			= 3001;	// 开始匹配 
+	MSG_CANCEL_MATCH_REQ			= 3002;	// 取消匹配
+	MSG_INFORM_MATCH_RESULT 		= 3003;	// 通知匹配结果
+	MSG_AFFIRM_MATCH_REQ 			= 3004;	// 请求确认匹配
+	MSG_INFORM_BATTLE_REQ			= 3005;	// 服务器通知战场信息
+	MSG_INFORM_BATTLE_ACK			= 3006;	// 客户端确认战场信息
+	MSG_FINISH_ROOM_REQ				= 3007;	// 服务器通知战场房间结束
+
+	// hero
+	MSG_REFRESH_RECRUIT_REQ			= 3102;	// 刷新招募英雄
+	MSG_CHOOSE_DIVISOR_REQ			= 3103;	// 选择偏好因子
+	MSG_REMOVE_DIVISOR_REQ			= 3104;	// 取消偏好因子
+	MSG_RECRUIT_HERO_REQ			= 3105;	// 招募英雄
+	MSG_HERO_TEAM_CHANGE_REQ		= 3106;	// 队伍改变请求(增加删除)
+	MSG_HERO_TEAM_EXCHANGE_REQ  	= 3107; // 队伍角色互换请求
+	MSG_LOCK_HERO_REQ				= 3108;	// 锁定英雄
+	MSG_REMOVE_HERO_REQ				= 3109;	// 删除英雄
+	MSG_SET_HERO_NAME_REQ			= 3110; // 设置英雄名字
+	MSG_SET_RECRUIT_HERO_NAME_REQ 	= 3111; // 设置招募所英雄名字
+	MSG_SET_HERO_ACTIVE_SKILL_REQ	= 3112; // 选择英雄主动技能
+
+	// train
+	MSG_TRAIN_CHANGE_REQ			= 3200;	// 训练改变请求(增加删除)
+	MSG_TRAIN_EXCHANGE_REQ  		= 3201; // 训练角色互换请求
+	MSG_TRAIN_CLEAN_REQ				= 3202;	// 一键清空训练栏
+	MSG_TRAIN_ONEKEY_REQ			= 3203;	// 一键完成训练栏
+
+	// clinic
+	MSG_CLINIC_CURE_REQ				= 3210;	// 治疗请求
+
+	// granary
+	MSG_GRANARY_GATHER_REQ			= 3215;	// 收获粮食
+
+	// smithy
+	MSG_SMITHY_GATHER_REQ			= 3218;	// 收取铁匠铺材料
+	MSG_SMITHY_MAKE_REQ				= 3219;	// 打造武器
+
+	// maincamp
+	MSG_SET_BUILD_SKIN_REQ			= 3223;	// 设置建筑外观
+
+	// transfer
+	MSG_TRANSFER_PRO_REQ			= 3250;	// 英雄转职请求
+	MSG_SELECT_INNATE_REQ			= 3251;	// 选择天赋请求
+
+	// explore
+	MSG_EXPLORE_REQ					= 3301;	// 进入探索地图请求
+	MSG_EXPLORE_ACK					= 3302;	// 进入探索地图回应
+	MSG_PVE_REQ						= 3303;	// 战斗请求(生成npc)
+	MSG_PVE_ACK						= 3304;	// 战斗回应	(生成npc)
+	MSG_PVE_BALANCE_REQ				= 3305; // PVE战斗结算	
+	MSG_EXIT_EXPLORE_REQ			= 3306; // 退出探索
+	MSG_UPDATE_FIGHTER_HERO_REQ		= 3308;	// 更新战斗数据
+	MSG_PVE_BALANCE_ACK				= 3310;	// 战斗结算结果
+	MSG_EXPLORE_BALANCE_REQ			= 3311;	// 探索结算请求
+	MSG_EXPLORE_BALANCE_ACK			= 3312;	// 探索结算结果
+	MSG_UPDATE_EXPLORE_PLAYER_REQ	= 3313;	// 更新探索玩家数据
+	MSG_UPDATE_EXPLORE_NPC_REQ		= 3314;	// 更新探索npc数据
+	MSG_UPDATE_EXPLORE_BUFF_ACK		= 3315;	// 更新探索buff数据
+	MSG_EXPLORE_DROP_REQ			= 3316;	// 探索掉落请求
+	MSG_KILL_NPC_REQ				= 3317;	// 击杀npc怪物
+	MSG_UPDATE_FAITH_REQ			= 3318;	// 更新信仰请求
+	MSG_INTERACT_ITEM_REQ			= 3319;	// 交互物件请求
+
+
+	// daily
+	MSG_QUERY_RECORD_REQ			= 3351;	// 查询记录
+	MSG_QUERY_RECORD_ACK			= 3352;	// 记录返回
+	
+	// chapter
+	MSG_CHAPTER_EXECUTE_STATUS_REQ	= 3371;	// 请求执行章节状态
+	
+	// item
+	MSG_HERO_WEAPON_REQ				= 3400;	// 给英雄装备武器
+	MSG_HERO_UNWEAPON_REQ			= 3401;	// 给英雄脱武器
+	MSG_UPDATE_DURABILITY_REQ		= 3402;	// 更新武器耐久
+	MSG_HERO_WEAPON_ANOTHER_REQ		= 3403;	// 从影响身上装备武器到应该一个英雄身上
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 开始匹配
+// MSG_START_MATCH_REQ
+message MsgStartMatchReq
+{
+	bytes version = 1;		// 客户端版本号
+	uint32 matchid = 2;		// 匹配模式
+	uint64 serverid = 3;	// 指定的battle服务器id
+}
+
+// 取消匹配
+// MSG_CANCEL_MATCH_REQ
+message MsgCancelMatchReq
+{
+	uint32 matchid = 1;		// 匹配模式
+}
+
+// 通知匹配成功
+// MSG_INFORM_MATCH_RESULT
+message MsgInformMatchResult
+{
+	uint32 time = 1;		// 等待确认时间( 单位: 秒 )
+}
+
+// 请求确认
+// MSG_AFFIRM_MATCH_REQ
+message MsgAffirmMatchReq
+{
+}
+
+// 通知战场信息
+// MSG_INFORM_BATTLE_REQ
+message MsgInformBattleReq
+{
+	uint64 roomid = 1;			// 房间id
+	uint64 battleid = 2;		// 战斗服务器id
+	bytes ip = 3;				// ip
+	uint32 port = 4;			// 端口
+}
+
+// 确认战场信息
+// MSG_INFORM_BATTLE_ACK
+message MsgInformBattleAck
+{
+}
+
+// 房间结束
+// MSG_FINISH_ROOM_REQ
+message MsgFinishRoomReq
+{
+	uint64 roomid = 1;			// 房间id
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// 刷新招募英雄
+// MSG_REFRESH_RECRUIT_REQ
+message MsgRefreshRecruitReq
+{
+	uint32 type = 1;	// 刷新类型(对应RecruitEnum), 不能使用免费刷新
+} 
+
+// 选择偏好因子
+// MSG_CHOOSE_DIVISOR_REQ
+message MsgChooseDivisorReq
+{
+	repeated uint32 id = 1;		// 偏好因子id数组
+}
+
+// 取消偏好因子
+// MSG_REMOVE_DIVISOR_REQ
+message MsgRemoveDivisorReq
+{
+	repeated uint32 id = 1;		// 偏好因子id数组
+}
+
+// 招募英雄
+// MSG_RECRUIT_HERO_REQ
+message MsgRecruitHeroReq
+{
+	uint64 uuid = 1;	// 英雄的uuid
+}
+
+// 队伍改变请求(增加删除)
+// MSG_HERO_TEAM_CHANGE_REQ
+message MsgHeroTeamChangeReq
+{
+	uint32 index = 1;	// 队伍的位置(索引从1开始)
+	uint64 uuid = 2;	// 英雄的uuid(0就是取消)
+}
+
+// 队伍角色互换请求
+// MSG_HERO_TEAM_EXCHANGE_REQ
+message MsgHeroTeamExchangeReq
+{
+	uint32 oldindex = 1;	// 原来位置(索引从1开始)
+	uint32 newindex = 2;	// 新的位置(索引从1开始)
+}
+
+// 锁定英雄
+// MSG_LOCK_HERO_REQ
+message MsgLockHeroReq
+{
+	uint64 uuid = 1;	// 英雄的uuid
+	uint32 oper = 2;	// 操作类型(0：解锁 1：锁定英雄列表)
+}
+
+// 删除英雄
+// MSG_REMOVE_HERO_REQ
+message MsgRemoveHeroReq
+{
+	uint64 uuid = 1;	// 英雄的uuid
+}
+
+// 设置英雄名字
+// MSG_SET_HERO_NAME_REQ
+message MsgSetHeroNameReq
+{
+	uint64 uuid = 1;	// 英雄的uuid
+	bytes name = 2;		// 名字
+}
+
+// 设置招募所英雄名字
+// MSG_SET_RECRUIT_HERO_NAME_REQ
+message MsgSetRecruitHeroNameReq
+{
+	uint64 uuid = 1;	// 英雄的uuid
+	bytes name = 2;		// 名字
+}
+
+// 选择英雄主动技能
+// MSG_SET_HERO_ACTIVE_SKILL_REQ
+message MsgSetHeroActiveSkillReq
+{
+	uint64 uuid = 1;	// 英雄的uuid
+	uint32 index = 2;	// 技能索引
+}
+
+// 训练改变请求(增加删除)
+// MSG_TRAIN_CHANGE_REQ
+message MsgTrainChangeReq
+{
+	uint32 index = 1;	// 训练栏的位置(索引从1开始)
+	uint64 uuid = 2;	// 英雄的uuid(0就是取消)
+}
+
+// 训练角色互换请求
+// MSG_TRAIN_EXCHANGE_REQ
+message MsgTrainExchangeReq
+{
+	uint32 oldindex = 1;	// 原来位置(索引从1开始)
+	uint32 newindex = 2;	// 新的位置(索引从1开始)
+}
+
+// 一键清空训练栏
+// MSG_TRAIN_CLEAN_REQ
+message MsgTrainCleanReq
+{
+}
+
+// 一键完成训练栏
+// MSG_TRAIN_ONEKEY_REQ
+message MsgTrainOnekeyReq
+{
+	uint32 index = 1;	// 训练栏的位置(索引从1开始)
+}
+
+// 治疗请求
+// MSG_CLINIC_CURE_REQ
+message MsgClinicCureReq
+{
+	repeated uint64 uuid = 1;	// 英雄uuid列表
+}
+
+// 收获粮食
+// MSG_GRANARY_GATHER_REQ
+message MsgGranaryGatherReq
+{
+}
+
+// 收取铁匠铺材料
+// MSG_SMITHY_GATHER_REQ
+message MsgSmithyGatherReq
+{
+}
+
+// 武器打造
+// MSG_SMITHY_MAKE_REQ
+message MsgSmithyMakeReq
+{
+	uint32 id = 1;		// 武器id
+	uint32 num = 2;		// 打造数量
+}
+////////////////////////////////////////////////////////////////////////////
+// 进入探索地图请求
+// MSG_EXPLORE_REQ	
+message MsgExploreReq
+{
+	uint32 mapid = 1;			// 探索的地图id
+}
+
+// 进入探索地图回应
+// MSG_EXPLORE_ACK	
+message MsgExploreAck
+{
+	uint32 mapid = 1;				// 探索的地图id
+	PBExploreData exploredata = 2;	// 探索数据( 帮客户端保存的 )
+}
+
+// 退出探索
+// MSG_EXIT_EXPLORE_REQ
+message MsgExitExploreReq
+{
+
+}
+
+// 战斗请求(生成npc)
+// MSG_PVE_REQ
+message MsgPVEReq
+{
+	uint32 pveid = 1;		// 战斗id
+	uint32 battleid = 2;	// 地形id
+}
+
+// 战斗回应	(生成npc)
+// MSG_PVE_ACK
+message MsgPVEAck
+{
+	uint32 pveid = 1;		// 战斗id
+	uint32 battleid = 2;	// 地形id
+	uint32 faith = 3;		// 信仰值
+	map< uint64, PBObject > hero = 4;	// 英雄列表
+	map< uint64, PBObject > npc = 5;	// npc列表
+	PBExploreBuffData buffdata = 6;		// buff数据
+}
+
+// 战斗结算请求
+// MSG_PVE_BALANCE_REQ
+message MsgPVEBalanceReq
+{
+	uint32 result = 1;			// 战斗结果 1=成功 2=失败
+	uint32 truns = 2;			// 战斗回合数
+}
+
+// 战斗结算结果
+// MSG_PVE_BALANCE_ACK
+message MsgPVEBalanceAck
+{
+	uint32 result = 1;			// 战斗结果 1=成功 2=失败
+	PBBalanceData balance = 2;	// 结算结果
+	bytes modulename = 3;		// 模块名
+	uint64 moduleid = 4;		// 模块id
+}
+
+// 探索结算请求
+// MSG_EXPLORE_BALANCE_REQ
+message MsgExploreBalanceReq
+{
+	uint32 result = 1;			// 战斗结果 1=成功 2=失败 3=逃跑
+}
+
+// 探索结算结果
+// MSG_EXPLORE_BALANCE_ACK
+message MsgExploreBalanceAck
+{
+	uint32 result = 1;			// 战斗结果 1=成功 2=失败 3=逃跑
+	PBBalanceData balance = 2;	// 结算结果
+}
+
+// 更新探索玩家数据
+// MSG_UPDATE_EXPLORE_PLAYER_REQ
+message MsgUpdateExplorePlayerReq
+{
+    PBExplorePlayerData playerdata = 1;
+}
+
+// 更新探索npc数据
+// MSG_UPDATE_EXPLORE_NPC_REQ
+message MsgUpdateExploreNpcReq
+{
+	PBExploreNpcData npcdata = 1;
+}
+
+message PBBuffChangeData
+{
+    uint64 uuid = 1;				// 英雄id
+	uint32 buffid = 2;				// BuffId
+	uint32 operate = 3;				// 操作类型(1：增加 2：减少)
+}
+
+// 更新探索buff数据
+// MSG_UPDATE_EXPLORE_BUFF_ACK
+message MsgUpdateExploreBuffAck
+{
+	repeated PBBuffChangeData bufflist = 1;
+}
+
+// 探索掉落请求
+// MSG_EXPLORE_DROP_REQ
+message MsgExploreDropReq
+{
+	repeated uint32 droplist = 1;		// 掉落id列表
+}
+
+// 杀死npc怪物
+// MSG_KILL_NPC_REQ
+message MsgKillNpcReq
+{
+	uint64 herouuid = 1;	// 英雄uuid( 击杀者 )
+	uint64 npcuuid = 2;		// npcuuid( 被击杀者 )
+}
+
+// 更新信仰请求
+// MSG_UPDATE_FAITH_REQ
+message MsgUpdateFaithReq
+{
+	uint32 faith = 1;		// 信仰值
+}
+
+// 交互物件请求
+// MSG_INTERACT_ITEM_REQ
+message MsgInteractItemReq
+{
+	uint32 itemid = 1;		// 物件id
+	uint32 field = 2;		// 交互场所(1：探索 2:战斗)
+}
+
+
+// 更新战斗数据
+// MSG_UPDATE_FIGHTER_HERO_REQ
+message MsgUpdateFighterHeroReq
+{
+	repeated PBFighterHeroData data = 1;	// 战斗数据
+}
+///////////////////////////////////////////////////////////
+// 选择建筑外观
+// MSG_SET_BUILD_SKIN_REQ
+message MsgSetBuildSkinReq
+{
+	uint32 id = 1;				// 外观id
+}
+
+// 英雄转职请求
+// MSG_TRANSFER_PRO_REQ
+message MsgTransferProReq
+{
+	uint64 uuid = 1;			// 英雄id
+	uint32 profession = 2;		// 职业id
+}
+
+// 选择天赋请求
+// MSG_SELECT_INNATE_REQ
+message MsgSelectInnateReq
+{
+	uint64 uuid = 1;			// 英雄id
+	repeated uint32 innate = 2;	// 删除天赋id列表
+}
+
+////////////////////////////////////////////////////
+// 查询营地记录
+// MSG_QUERY_RECORD_REQ
+message MsgQueryRecordReq
+{
+	uint32 type = 1;		// 记录类型
+	uint64 id = 2;			// id
+}
+
+// 记录返回
+// MSG_QUERY_RECORD_ACK
+message MsgQueryRecordAck
+{
+	uint32 type = 1;		// 记录类型
+	uint64 id = 2;			// id
+	repeated PBValues pbrecord = 3;	// 记录数据
+}
+////////////////////////////////////////////////////
+// 请求执行章节状态
+// MSG_CHAPTER_EXECUTE_STATUS_REQ
+message MsgChapterExecuteStatusReq
+{
+	uint32 chapterid = 1;
+}
+////////////////////////////////////////////////////
+// 给英雄装备武器
+// MSG_HERO_WEAPON_REQ
+message MsgHeroWeaponReq
+{
+	uint64 herouuid = 1;		// 英雄uuid
+	bytes itemname = 2;			// 背包名字
+	uint64 itemuuid = 3;		// 武器uuid
+}
+
+// 脱装备
+// MSG_HERO_UNWEAPON_REQ
+message MsgHeroUnWeaponReq
+{
+	uint64 herouuid = 1;		// 英雄uuid
+}
+
+// 从英雄身上装备武器到另外一个英雄身上
+// MSG_HERO_WEAPON_ANOTHER_REQ
+message MsgHeroWeaponAnotherReq
+{
+	uint64 sourceherouuid = 1;		// 源英雄uuid
+	uint64 targetherouuid = 2;		// 目标英雄uuid
+}
+
+// 更新武器耐久
+// MSG_UPDATE_DURABILITY_REQ
+message MsgUpdateDurabilityReq
+{
+	uint64 herouuid = 1;		// 英雄uuid
+	uint32 operate = 2;			// 操作类型(1：增加 2：减少)
+	uint32 durability = 3;		// 耐久值
+}
+

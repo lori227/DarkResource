@@ -1,0 +1,6 @@
+<root version="131">
+	<item Id="1" DefaultEvent="1" />
+	<item Id="2" DefaultEvent="4" />
+	<item Id="3" DefaultEvent="7" />
+	<item Id="4" DefaultEvent="10" />
+</root>

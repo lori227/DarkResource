@@ -1,0 +1,5 @@
+<root version="941">
+	<item Id="1000006" DrugType="1" BuffId="1" Restore="{&quot;hp&quot;:100}"/>
+	<item Id="1000007" DrugType="2" Restore="{&quot;hp&quot;:50}"/>
+	<item Id="1000008" DrugType="2" Restore="{&quot;hp&quot;:30,&quot;dip&quot;:-20}"/>
+</root>

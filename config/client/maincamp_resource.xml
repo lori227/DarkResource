@@ -1,0 +1,24 @@
+<root version="826">
+	<item _id="BuildInfo_MainCamp" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Recruit" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Medical" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Train" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Music" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Smithy" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Shop" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Inherit" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Cemetery" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Outer" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildInfo_Warehouse" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Dizziness.Buff_Dizziness"/>
+	<item _id="BuildIcon_MainCamp" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Recruit" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Medical" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Train" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Music" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Smithy" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Shop" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Inherit" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Cemetery" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Outer" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+	<item _id="BuildIcon_Warehouse" AssetPtr="/Game/ArtResource/UI/Icon/Fight/Buff/Buff_Fire.Buff_Fire"/>
+</root>

@@ -1,0 +1,6 @@
+<root version="941">
+	<item Id="1" DropDataId="1" ConditionType="1"/>
+	<item Id="1" DropDataId="2" Weight="100" ConditionType="1"/>
+	<item Id="1" DropDataId="3" ConditionType="1"/>
+	<item Id="1" DropDataId="4" ConditionType="1"/>
+</root>

@@ -1,0 +1,11 @@
+<root version="00000">
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="1" Race="1602" Profession="1100" Weapon="1000009" Sex="1" Level="1:1" RandSkill="1:100" Attr_atk="13" Attr_def="8" Attr_res="8" Attr_maxhp="24" Attr_tal="10" Attr_spd="15" Attr_luk="5"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="2" Race="1602" Profession="1100" Weapon="1000011" Sex="2" Level="1:1" RandSkill="2:100" Attr_atk="16" Attr_def="7" Attr_res="5" Attr_maxhp="20" Attr_tal="12" Attr_spd="14" Attr_luk="7"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="3" Race="1602" Profession="1110" Weapon="1000012" Sex="1" Level="1:1" RandSkill="3:100" Attr_atk="11" Attr_def="5" Attr_res="10" Attr_maxhp="17" Attr_tal="14" Attr_spd="17" Attr_luk="6"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="4" Race="1602" Profession="1115" Weapon="1000013" Sex="1" Level="1:1" RandSkill="4:100" Attr_atk="12" Attr_def="5" Attr_res="8" Attr_maxhp="15" Attr_tal="12" Attr_spd="10" Attr_luk="10"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="5" Race="1603" Profession="1118" Weapon="1000013" Sex="2" Level="1:1" RandSkill="5:100" Attr_atk="16" Attr_def="5" Attr_res="8" Attr_maxhp="13" Attr_tal="12" Attr_spd="10" Attr_luk="10"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="6" Race="1603" Profession="1123" Weapon="1000012" Sex="1" Level="1:1" RandSkill="6:100" Attr_atk="12" Attr_def="5" Attr_res="8" Attr_maxhp="17" Attr_tal="20" Attr_spd="17" Attr_luk="18"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="7" Race="1603" Profession="1126" Weapon="1000011" Sex="2" Level="1:1" RandSkill="7:100" Attr_atk="11" Attr_def="7" Attr_res="6" Attr_maxhp="16" Attr_tal="14" Attr_spd="15" Attr_luk="16"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="8" Race="1602" Profession="1105" Weapon="1000009" Sex="1" Level="1:1" RandSkill="8:100" Attr_atk="13" Attr_def="7" Attr_res="6" Attr_maxhp="18" Attr_tal="7" Attr_spd="15" Attr_luk="10"/>
+	<item RandDip="0-10:10|11-90:90|91-100:100" Id="9" Race="1601" Profession="1129" Weapon="1000010" Sex="1" Level="1:1" RandSkill="9:100" Attr_atk="12" Attr_def="10" Attr_res="4" Attr_maxhp="27" Attr_tal="5" Attr_spd="8" Attr_luk="4"/>
+</root>

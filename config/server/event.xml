@@ -1,0 +1,15 @@
+<root version="126">
+	<item Id="1" DropId="0" Type="explore" Param="10086" />
+	<item Id="2" DropId="0" Type="pve" Param="1" />
+	<item Id="3" DropId="0" Type="explore" Param="10086" />
+	<item Id="4" DropId="0" Type="explore" Param="10086" />
+	<item Id="5" DropId="0" Type="pve" Param="1" />
+	<item Id="6" DropId="0" Type="explore" Param="10086" />
+	<item Id="7" DropId="0" Type="explore" Param="10086" />
+	<item Id="8" DropId="0" Type="pve" Param="1" />
+	<item Id="9" DropId="0" Type="explore" Param="10086" />
+	<item Id="10" DropId="0" Type="explore" Param="10086" />
+	<item Id="11" DropId="0" Type="pve" Param="1" />
+	<item Id="999998" DropId="0" Type="" Param="" />
+	<item Id="999999" DropId="0" Type="" Param="" />
+</root>

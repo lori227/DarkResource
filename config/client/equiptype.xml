@@ -1,0 +1,7 @@
+<root version="826">
+	<item Id="1801" DefaultId="1" Icon="W1" RefrainUpIcon="Suppress_Sword" RefrainDownIcon="Counter_Sword"/>
+	<item Id="1802" DefaultId="1" Icon="W2" RefrainUpIcon="Suppress_Ax" RefrainDownIcon="Counter_Ax"/>
+	<item Id="1803" DefaultId="1" Icon="W3" RefrainUpIcon="Suppress_Spear" RefrainDownIcon="Counter_Spear"/>
+	<item Id="1804" DefaultId="1" Icon="W4" RefrainUpIcon="Suppress_Bow" RefrainDownIcon="Counter_Bow"/>
+	<item Id="1805" DefaultId="1" Icon="W5" RefrainUpIcon="Suppress_Staff" RefrainDownIcon="Counter_Staff"/>
+</root>

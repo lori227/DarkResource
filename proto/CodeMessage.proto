@@ -1,0 +1,110 @@
+syntax = "proto3";
+package KFMsg;
+
+//////////////////////////////////////////////////////////////////////////////////
+// 20000-30000
+enum ProjectCodeEnum
+{
+	LogicError					= 0;		// 失败	
+	
+	// battle
+	MatchRequestOk 				= 31001;	// 请求匹配成功, 请等待...
+	MatchAlreadyWait			= 31002;	// 正在匹配中, 不要重复请求
+	MatchInRoom					= 31003;	// 已经在匹配房间中, 请等待...
+	MatchNotInMatch    	 		= 31004;	// 不在匹配中, 不需要取消
+	MatchCancelOk	    		= 31005;	// 取消匹配成功
+	MatchAffirmTimeout  		= 31007;	// 确认匹配超时
+	RoomAllotBattle				= 31008;	// 正在分配战场服务器, 请等待
+	MatchIdError				= 31009;	// 匹配id错误
+
+	// hero
+	HeroDivisorError			= 31101;	// 偏好因子Id错误
+	HeroDivisorExist			= 31102;	// 偏好因子已经存在
+	HeroRecruitRefresh			= 31103;	// 刷新招募列表成功
+	HeroRecruitRefreshFreeError = 31104;	// 不支持主动免费刷新
+	HeroRecruitRefreshTypeError	= 31105;	// 刷新类型错误
+	HeroRecruitNotExist			= 31106;	// 招募英雄不存在
+	HeroRecruitCostError		= 31107;	// 招募花费解析失败
+	HeroRecruitDataError		= 31108;	// 招募英雄数据错误
+	HeroRecruitOk				= 31109;	// 招募英雄成功
+	HeroDivisorMaxCount			= 31110;	// 偏好因子同类型已经达到最大个数
+	HeroNotExist				= 31111;	// 英雄列表没有这个英雄
+	HeroTeamIndexError			= 31112;	// 英雄队伍位置错误
+	HeroTeamDataInvalid			= 31113;	// 英雄队伍数据无效
+	HeroNotInHeroList			= 31114;	// 该英雄不在英雄列表
+	HeroLevelIsMax				= 31115;	// 该英雄已满级	
+	HeroLockNotChange			= 31116;	// 英雄锁定标记未改变
+	HeroIsLocked				= 31117;	// 英雄被锁定了
+	HeroLockFlagError			= 31118;	// 英雄锁定标记错误
+	HeroNameNotChange			= 31119;	// 英雄名字没有改变
+	HeroSkillNotChange			= 31120;	// 英雄技能没有改变
+	HeroSkillIndexError			= 31121;	// 英雄技能索引错误
+	HeroHpIsMax					= 31122;	// 英雄血量已满
+	HeroTransferDataError		= 31123;	// 英雄转职数据错误
+	HeroLevelNotEnough			= 31124;	// 英雄等级不足
+	HeroTransferCostError		= 31125;	// 转职消耗配置错误
+	HeroCanNotTransfer			= 31126;	// 当前职业不能转职
+	HeroProfessionIsError		= 31127;	// 英雄职业数据错误
+	HeroNameEmpty				= 31128;	// 英雄名字为空
+	HeroTransferSuc				= 31129;	// 英雄转职成功
+	HeroSelectInnateSuc			= 31130;	// 英雄选择天赋成功
+	HeroIsDead					= 31131;	// 英雄已死亡
+	HeroRaceIsError				= 31132;	// 英雄种族数据错误
+
+	// build
+	TrainCampLevelError			= 31200;	// 训练所等级错误
+	TrainCampIndexError			= 31201;	// 训练栏位置错误
+	TrainCampHeroNotExist		= 31202;	// 当前训练栏位没有英雄
+	TrainCampHeroIsExist		= 31203;	// 当前英雄已经在训练栏了
+	BuildFuncNotActive			= 31204;	// 建筑功能还未开启
+	MainCampSkinNotExist		= 31205;	// 营地外观不存在
+	MainCampSkinNotActive		= 31206;	// 营地外观未激活
+	ClinicSettingError			= 31207;	// 医疗所配置错误
+	ClinicItemIsNotEnough		= 31208;	// 医疗所道具不足
+	ClinicMoneyIsError			= 31209;	// 医疗所金钱配置错误
+	TrainCampSettingError		= 31210;	// 训练所配置错误
+	TrainCampIsFinished			= 31211;	// 该栏位训练已结束
+	GranarySettingError			= 31212;	// 粮仓配置错误
+	GranaryHaveNotItem			= 31213;	// 没有粮食不能收获
+	SmithyConsumeNotEnough		= 31214;	// 打造消耗不足
+	SmithySettingError			= 31215;	// 铁匠铺配置错误
+	SmithyHaveNotItem			= 31216;	// 没有材料
+	SmithyStoreIsMax			= 31217;	// 铁匠铺材料储存已满
+	SmithyWeaponSettingError	= 31218;	// 铁匠铺武器配置错误
+	SmithyMakeNumError			= 31219;	// 打造数量错误
+	SmithyMakeNumNotEnough		= 31220;	// 打造材料不足
+	ClinicCountIsNotEnough		= 31221;	// 医疗所栏位不足
+	ClinicNotNeedCure			= 31222;	// 不需要治疗
+	SmithyMakeWeaponSuc			= 31223;	// 铁匠铺打造武器成功
+	
+
+	// explore
+	ExploreMapLimit				= 31303;	// 只能同时探索一个地图
+	ExploreMapError				= 31304;	// 探索地图错误
+	ExploreNotInExplore			= 31305;	// 不在探索状态中
+	PVEIdError					= 31306;	// 战斗id错误
+	PVEAlready					= 31307;	// 已经在战斗中
+	ExploreAlready				= 31308;	// 已经在探索中
+	ExploreNotInStatus			= 31309;	// 不在探索状态
+	PVENotInStatus				= 31310;	// 不在pve状态
+
+	// chapter
+	ChapterIdError				= 32401;	// 章节配置错误
+	ChapterNotOpen				= 32402;	// 章节还没有开启
+	ChapterEventError			= 32403;	// 章节事件数据错误
+	ChapterDefaultError 		= 32404;	// 默认的事件组(逻辑id与该点不匹配)
+	ChapterStatusIdError		= 32405;	// 章节状态id错误		
+	ChapterExecuteFailed		= 32406;	// 章节状态执行失败		
+
+	// item
+	ItemWeaponOnly				= 32500;	// 只有武器才能装备
+	ItemWeaponRaceLimit			= 32501;	// 装备种族限制
+	ItemWeaponHeroLimit			= 32502;	// 装备受英雄武器限制
+	ItemWeaponLevelLimit		= 32503;	// 装备受英雄等级限制
+	ItemWeaponFailed			= 32504;	// 装备武器失败
+	ItemWeaponOk				= 32505;	// 装备武器成功
+	ItemWeaponNotExist			= 32506;	// 英雄装备不存在
+	ItemUnWeaponFailed			= 32507;	// 卸下装备失败
+	ItemUnWeaponOk				= 32508;	// 卸下装备成功
+	ItemUpdateDurabilityError	= 32509;	// 更新耐久操作类型错误
+}

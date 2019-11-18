@@ -1,0 +1,7 @@
+<root version="89">
+	<item Id="default" Type="1" Template="[{{&quot;{}&quot;:&quot;{}&quot;}}]" />
+	<item Id="var" Type="2" Template="[{{&quot;{}&quot;:{{&quot;value&quot;:&quot;{}&quot;,&quot;id&quot;:&quot;{}&quot;}}}}]" />
+	<item Id="hero" Type="2" Template="[{{&quot;{}&quot;:{{&quot;generateid&quot;:&quot;{}&quot;}}}}]" />
+	<item Id="item" Type="2" Template="[{{&quot;{}&quot;:{{&quot;count&quot;:&quot;{}&quot;,&quot;id&quot;:&quot;{}&quot;}}}}]" />
+	<item Id="eventgroup" Type="2" Template="[{{&quot;{}&quot;:{{&quot;order&quot;:&quot;{}&quot;,&quot;id&quot;:&quot;{}&quot;}}}}]" />
+</root>

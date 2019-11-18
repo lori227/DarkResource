@@ -1,0 +1,135 @@
+syntax = "proto3";
+package KFMsg;
+
+//////////////////////////////////////////////////////////////////////////////////
+enum CampEnum
+{
+	UnknowCamp 	= 0;		// 无效
+	RedCamp 	= 1;		// 红色阵营
+	BlueCamp 	= 2;		// 蓝色阵营
+}
+//////////////////////////////////////////////////////////////////////////////////
+enum RefreshEnum
+{
+	UnknowRefresh 	= 0;		// 无效
+
+	RefreshByFree	= 1;		// 免费刷新
+	RefreshByCount	= 2;		// 使用次数刷新
+	RefreshByCost	= 3;		// 使用资源花费刷新
+}
+
+enum DivisorEnum
+{
+	UnknowDivisor 	= 0;		// 无效
+
+	DivisorOfRace	= 1;		// 种族偏好因子
+	DivisorOfMove	= 2;		// 移动方式偏好因子
+	DivisorOfWeapon = 3;		// 武器类型偏好因子
+}
+//////////////////////////////////////////////////////////////////////////////////
+
+enum HeroLockEnum
+{
+	NoLock = 0;			// 无锁定
+	HeroListLock = 1;	// 锁定在英雄列表
+
+	CountLock = 2;		// 锁定标记数量
+}
+//////////////////////////////////////////////////////////////////////////////////
+enum BalanceEnum
+{
+	UnknowBalance = 0;	// 无效值
+	Victory = 1;		// 胜利
+	Failed = 2;			// 失败
+	Flee = 3;			// 逃跑
+}
+
+// 建筑类型
+enum BuildEnum
+{
+	InvalidBuild = 0;		// 无效建筑
+	HeroList = 200;			// 英雄列表
+	HeroTeam = 201;			// 英雄队伍
+	MainBuild = 202;		// 军中帐
+	RecruitBuild = 203;		// 招募所
+	ClinicBuild = 204;		// 医疗所
+	TrainBuild = 205;		// 训练所
+	OperaBuild = 206;		// 歌剧院
+	SmithyBuild = 207;		// 铁匠铺
+	ShopBuild = 208;		// 行商人
+	InheritBuild = 209;		// 继承所
+	CemeteryBuild = 210;	// 墓园
+	OuterBuild = 211;		// 外派任务
+	WarehouseBuild = 212;	// 仓库
+	
+}
+
+// 记录类型
+enum RecordEnum
+{
+	InvalidRecord = 0;	// 无效记录
+
+	CampRecord = 1;		// 营地记录
+	DailyRecord = 2;	// 日报记录
+	DeadRecord = 3;		// 死亡记录
+	LifeRecord = 4;		// 生平记录
+}
+
+// 生平事件
+enum LifeEventEnum
+{
+	HeroBorn = 0;		// 英雄出生
+	HeroDead = 1;		// 英雄死亡
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// 游戏状态
+enum PlayerStatusEnumEx
+{
+	UnknowStatus = 0;	// 无效
+	OnlineStatus = 1;	// 在线
+	OfflineStatus = 2;	// 离线
+	ExploreStatus = 3;	// 探索
+	PVEStatus = 4;		// PVE
+	PVPStatus = 5;		// PVP
+}
+//////////////////////////////////////////////////////////////////////////////////
+// 小红点
+enum NoticeEnumEx
+{
+	UnknowNotice = 0;	// 无效
+
+	NoticeCampRecord = 100;		// 营地纪录
+	NoticeDailyRecord = 101;	// 日报纪录
+	NoticeDeadRecord = 102;		// 死亡纪录
+}
+
+// 过期类型
+enum ExpireEnum
+{
+	InvalidExpire = 0;	// 无效，不会过期
+	TimeExpire = 1;		// 时间过期
+	NumExpire = 2;		// 数量过期
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// 结算显示类型
+enum BalanceShowEnum
+{
+	UnknowShow = 0;	// 无效
+
+	Explore = 1;	// 探索
+	Balance = 2;	// 结算
+}
+
+// 道具自动处理(探索结束)
+enum ItemAutoEnum
+{
+	AutoInvalid = 0;	// 不处理
+
+	AutoStore = 1;		// 自动存入仓库
+	AutoDestory = 2;	// 自动销毁
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////
