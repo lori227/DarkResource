@@ -61,6 +61,7 @@ enum BuildEnum
 	CemeteryBuild = 210;	// 墓园
 	OuterBuild = 211;		// 外派任务
 	WarehouseBuild = 212;	// 仓库
+	GranaryBuild = 213;		// 粮仓
 	
 }
 
@@ -130,6 +131,5 @@ enum ItemAutoEnum
 	AutoStore = 1;		// 自动存入仓库
 	AutoDestory = 2;	// 自动销毁
 }
-
 
 //////////////////////////////////////////////////////////////////////////////////

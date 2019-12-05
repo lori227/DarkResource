@@ -50,6 +50,11 @@ enum ProjectCodeEnum
 	HeroSelectInnateSuc			= 31130;	// 英雄选择天赋成功
 	HeroIsDead					= 31131;	// 英雄已死亡
 	HeroRaceIsError				= 31132;	// 英雄种族数据错误
+	HeroDivisorNotUnlock		= 31133;	// 偏好因子未解锁
+	HeroRecruitRefreshCount		= 31134;	// 招募英雄刷新数量错误, 是否科技解锁错误
+	HeroRecruitRefreshGenerate  = 31135;	// 招募英雄刷新池错误, 是否科技解锁错误
+	HeroRecruitRefreshWeight    = 31136;	// 招募英雄刷新权重错误, 是否科技解锁错误
+	HeroRefreshCountNotEnough   = 31137;	// 刷新数量不够
 
 	// build
 	TrainCampLevelError			= 31200;	// 训练所等级错误
@@ -76,7 +81,16 @@ enum ProjectCodeEnum
 	ClinicCountIsNotEnough		= 31221;	// 医疗所栏位不足
 	ClinicNotNeedCure			= 31222;	// 不需要治疗
 	SmithyMakeWeaponSuc			= 31223;	// 铁匠铺打造武器成功
-	
+	BuildLevelIsMax				= 31224;	// 建筑等级已满
+	BuildInUpgradeTime			= 31225;	// 建筑正在升级
+	BuildNoFreeUpgradeList		= 31226;	// 没有空闲的升级队列
+	BuildUpgradeLackCondition	= 31227;	// 建筑升级条件不足
+	BuildNotInUpgradeTime		= 31228;	// 建筑不在升级中
+	BuildLevelSettingError		= 31229;	// 建筑等级配置错误
+	TechnologySettingError		= 31230;	// 科技配置错误
+	TechnologyLackPreCondition	= 31231;	// 前置条件不满足
+	TechnologyIsUnlock			= 31232;	// 当前科技已解锁
+	TechnologyIslock			= 31233;	// 当前科技未解锁
 
 	// explore
 	ExploreMapLimit				= 31303;	// 只能同时探索一个地图
@@ -87,6 +101,7 @@ enum ProjectCodeEnum
 	ExploreAlready				= 31308;	// 已经在探索中
 	ExploreNotInStatus			= 31309;	// 不在探索状态
 	PVENotInStatus				= 31310;	// 不在pve状态
+	ExploreHeroTeamEmpty		= 31311;	// 请先编组出战英雄					
 
 	// chapter
 	ChapterIdError				= 32401;	// 章节配置错误

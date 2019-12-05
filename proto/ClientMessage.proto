@@ -32,12 +32,13 @@ enum ClientProtocol
 
 	// train
 	MSG_TRAIN_CHANGE_REQ			= 3200;	// 训练改变请求(增加删除)
-	MSG_TRAIN_EXCHANGE_REQ  		= 3201; // 训练角色互换请求
-	MSG_TRAIN_CLEAN_REQ				= 3202;	// 一键清空训练栏
-	MSG_TRAIN_ONEKEY_REQ			= 3203;	// 一键完成训练栏
+	MSG_TRAIN_CLEAN_REQ				= 3201;	// 一键清空训练栏
+	MSG_TRAIN_ONEKEY_REQ			= 3202;	// 一键完成训练栏
 
 	// clinic
 	MSG_CLINIC_CURE_REQ				= 3210;	// 治疗请求
+	MSG_CLINIC_MEDICAL_FEE_REQ		= 3211;	// 治疗医药费请求
+	MSG_CLINIC_MEDICAL_FEE_ACK		= 3212;	// 治疗医药费响应
 
 	// granary
 	MSG_GRANARY_GATHER_REQ			= 3215;	// 收获粮食
@@ -48,6 +49,13 @@ enum ClientProtocol
 
 	// maincamp
 	MSG_SET_BUILD_SKIN_REQ			= 3223;	// 设置建筑外观
+
+	// build
+	MSG_START_UPGRADE_BUILD_REQ		= 3230;	// 开始升级建筑
+	MSG_ONEKEY_UPGRADE_BUILD_REQ	= 3231;	// 快速升级建筑
+	MSG_UPGRADE_BUILD_REQ			= 3232;	// 升级建筑请求
+	MSG_UPGRADE_TECHNOLOGY_REQ		= 3233;	// 升级科技请求
+
 
 	// transfer
 	MSG_TRANSFER_PRO_REQ			= 3250;	// 英雄转职请求
@@ -85,6 +93,11 @@ enum ClientProtocol
 	MSG_HERO_UNWEAPON_REQ			= 3401;	// 给英雄脱武器
 	MSG_UPDATE_DURABILITY_REQ		= 3402;	// 更新武器耐久
 	MSG_HERO_WEAPON_ANOTHER_REQ		= 3403;	// 从影响身上装备武器到应该一个英雄身上
+
+	// dialogue
+	MSG_DIALOGUE_START_ACK 			= 3431;	// 通知开始对话
+	MSG_DIALOGUE_FINISH_REQ 		= 3432;	// 告知结束对话
+
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -236,14 +249,6 @@ message MsgTrainChangeReq
 	uint64 uuid = 2;	// 英雄的uuid(0就是取消)
 }
 
-// 训练角色互换请求
-// MSG_TRAIN_EXCHANGE_REQ
-message MsgTrainExchangeReq
-{
-	uint32 oldindex = 1;	// 原来位置(索引从1开始)
-	uint32 newindex = 2;	// 新的位置(索引从1开始)
-}
-
 // 一键清空训练栏
 // MSG_TRAIN_CLEAN_REQ
 message MsgTrainCleanReq
@@ -262,6 +267,20 @@ message MsgTrainOnekeyReq
 message MsgClinicCureReq
 {
 	repeated uint64 uuid = 1;	// 英雄uuid列表
+}
+
+// 治疗医药费请求
+// MSG_CLINIC_MEDICAL_FEE_REQ
+message MsgClinicMedicalFeeReq
+{
+	repeated uint64 uuid = 1;	// 英雄uuid列表
+}
+
+// 治疗医药费响应
+// MSG_CLINIC_MEDICAL_FEE_ACK
+message MsgClinicMedicalFeeAck
+{
+	bytes element = 1;	// 消耗元数据
 }
 
 // 收获粮食
@@ -330,8 +349,9 @@ message MsgPVEAck
 // MSG_PVE_BALANCE_REQ
 message MsgPVEBalanceReq
 {
-	uint32 result = 1;			// 战斗结果 1=成功 2=失败
-	uint32 truns = 2;			// 战斗回合数
+	uint32 result = 1;				// 战斗结果 1=成功 2=失败
+	uint32 truns = 2;				// 战斗回合数
+	repeated uint64 herolist = 3;	// 上阵英雄uuid列表
 }
 
 // 战斗结算结果
@@ -432,6 +452,35 @@ message MsgSetBuildSkinReq
 	uint32 id = 1;				// 外观id
 }
 
+
+// 开始升级建筑
+// MSG_START_UPGRADE_BUILD_REQ
+message MsgStartUpgradeBuildReq
+{
+	uint32 id = 1;				// 建筑id
+}
+
+// 一键完成升级建筑
+// MSG_ONEKEY_UPGRADE_BUILD_REQ
+message MsgOnekeyUpgradeBuildReq
+{
+	uint32 id = 1;				// 建筑id
+}
+
+// 升级建筑请求
+// MSG_UPGRADE_BUILD_REQ
+message MsgUpgradeBuildReq
+{
+	uint32 id = 1;				// 建筑id
+}
+
+// 升级科技请求
+// MSG_UPGRADE_TECHNOLOGY_REQ
+message MsgUpgradeTechnologyReq
+{
+	uint32 id = 1;				// 科技id
+}
+
 // 英雄转职请求
 // MSG_TRANSFER_PRO_REQ
 message MsgTransferProReq
@@ -478,8 +527,7 @@ message MsgChapterExecuteStatusReq
 message MsgHeroWeaponReq
 {
 	uint64 herouuid = 1;		// 英雄uuid
-	bytes itemname = 2;			// 背包名字
-	uint64 itemuuid = 3;		// 武器uuid
+	uint64 itemuuid = 2;		// 武器uuid
 }
 
 // 脱装备
@@ -506,3 +554,16 @@ message MsgUpdateDurabilityReq
 	uint32 durability = 3;		// 耐久值
 }
 
+// 通知开始对话
+// MSG_DIALOGUE_START_ACK
+message MsgDialogueStartAck
+{
+	uint32 dialogid = 1;
+}
+
+// 告知结束对话
+// MSG_DIALOGUE_FINISH_REQ
+message MsgDialogueFinishReq
+{
+	uint32 dialogueid = 1;
+}
