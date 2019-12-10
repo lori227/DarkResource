@@ -45,6 +45,7 @@ message PBBalanceHero
     bool death  = 8;                        // 是否死亡
     map<string, uint32> attributes = 9;     // 属性列表
     map<uint32, uint32> character = 20;     // 获得的性格( key=新性格 value=替换的性格( 0 表示没有 ) )
+    uint32 deathreason = 21;                // 死亡原因(参照HeroDeathReason)
 }
 
 // 货币结算信息
@@ -88,6 +89,7 @@ message PBBalanceHeroServer
     map<string, uint32> beginattributes = 12;   // 属性列表
     map<string, uint32> endattributes = 13;     // 属性列表
     map<uint32, uint32> character = 20;         // 获得的性格( key=新性格 value=替换的性格( 0 表示没有 ) )
+    uint32 deathreason = 21;                    // 死亡原因(参照HeroDeathReason)
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

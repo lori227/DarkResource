@@ -122,4 +122,12 @@ enum ProjectCodeEnum
 	ItemUnWeaponFailed			= 32507;	// 卸下装备失败
 	ItemUnWeaponOk				= 32508;	// 卸下装备成功
 	ItemUpdateDurabilityError	= 32509;	// 更新耐久操作类型错误
+
+	// attribute-extra
+	PlayerHeadIconSetOK			= 32601;	// 玩家头像设置成功
+	PlayerFactionSetOK			= 32602;	// 玩家势力设置成功
+	PlayerHeadIconNotExist		= 32603;	// 玩家头像数据不存在
+	PlayerFactionNotExist		= 32604;	// 玩家势力数据不存在
+	PlayerHeadIconNotHad		= 32605;	// 该头像未拥有
+
 }

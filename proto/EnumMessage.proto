@@ -132,4 +132,12 @@ enum ItemAutoEnum
 	AutoDestory = 2;	// 自动销毁
 }
 
+enum HeroDeathReason
+{
+	NoDeathReason = 0;	// 无死亡原因(存活)
+	NoExist = 1;	// 不存在单位
+	NoEnoughHp = 2; // 血量不足
+	NoEnoughDurability = 3; // 耐久度不足
+}
+
 //////////////////////////////////////////////////////////////////////////////////

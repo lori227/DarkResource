@@ -98,6 +98,10 @@ enum ClientProtocol
 	MSG_DIALOGUE_START_ACK 			= 3431;	// 通知开始对话
 	MSG_DIALOGUE_FINISH_REQ 		= 3432;	// 告知结束对话
 
+	// attribute-extra
+	MSG_SET_PLAYER_HEADICON_REQ 	= 3451;	// 设置玩家头像
+	MSG_SET_PLAYER_FACTION_REQ 		= 3452;	// 设置玩家势力
+
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -566,4 +570,18 @@ message MsgDialogueStartAck
 message MsgDialogueFinishReq
 {
 	uint32 dialogueid = 1;
+}
+
+// 设置玩家头像
+// MSG_SET_PLAYER_HEADICON_REQ
+message MsgSetPlayerHeadIconReq
+{
+	uint32 iconid = 1;
+}
+
+// 设置玩家势力
+// MSG_SET_PLAYER_FACTION_REQ
+message MsgSetPlayerFactionReq
+{
+	uint32 factionid = 1;
 }
