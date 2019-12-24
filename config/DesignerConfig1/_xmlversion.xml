@@ -1,4 +1,4 @@
-<root version="2308">
+<root version="2331">
 	<item name="itemtab" version="1147" />
 	<item name="weapontype" version="1147" />
 	<item name="buildcondition" version="1147" />
@@ -75,32 +75,32 @@
 	<item name="explore" version="2202" />
 	<item name="herogenerate" version="2209" />
 	<item name="heroweightpool" version="2209" />
-	<item name="conditiondefine" version="2228" />
 	<item name="itemtype" version="2238" />
 	<item name="herolevel" version="2240" />
 	<item name="heroment" version="2277" />
 	<item name="taskchainrefresh" version="2283" />
 	<item name="status" version="2283" />
 	<item name="chapter" version="2283" />
-	<item name="pve" version="2284" />
 	<item name="worldmaptext" version="2284" />
 	<item name="taskcondition" version="2285" />
-	<item name="dropdata" version="2286" />
-	<item name="dropgroup" version="2290" />
 	<item name="unlockcondition" version="2292" />
 	<item name="unlock" version="2292" />
 	<item name="camptext" version="2292" />
-	<item name="buildlevel" version="2293" />
 	<item name="rolebasetext" version="2295" />
 	<item name="herorace" version="2300" />
-	<item name="heroprofession" version="2300" />
-	<item name="npcgenerate" version="2302" />
-	<item name="technology" version="2304" />
-	<item name="class" version="2305" />
 	<item name="itemweapon" version="2306" />
-	<item name="dialogue" version="2308" />
-	<item name="task" version="2308" />
-	<item name="taskchain" version="2308" />
 	<item name="tasktext" version="2308" />
-	<item name="dialoguetext" version="2308" />
+	<item name="taskchain" version="2311" />
+	<item name="conditiondefine" version="2314" />
+	<item name="class" version="2315" />
+	<item name="dialogue" version="2319" />
+	<item name="dropdata" version="2319" />
+	<item name="dropgroup" version="2319" />
+	<item name="dialoguetext" version="2319" />
+	<item name="heroprofession" version="2323" />
+	<item name="npcgenerate" version="2325" />
+	<item name="buildlevel" version="2326" />
+	<item name="technology" version="2326" />
+	<item name="task" version="2330" />
+	<item name="pve" version="2331" />
 </root>

@@ -1,4 +1,4 @@
-<root version="1993">
+<root version="2318">
 	<item Id="4010001" Value="1602" Weight="300" />
 	<item Id="4010001" Value="1603" Weight="300" />
 	<item Id="4010001" Value="1601" Weight="100" />
@@ -19,7 +19,7 @@
 	<item Id="4030001" Value="1105" Weight="100" />
 	<item Id="4030001" Value="1110" Weight="100" />
 	<item Id="4030001" Value="1115" Weight="100" />
-	<item Id="4030001" Value="1118" Weight="0" />
+	<item Id="4030001" Value="1118" Weight="100" />
 	<item Id="4030001" Value="1123" Weight="100" />
 	<item Id="4030001" Value="1126" Weight="100" />
 	<item Id="4030001" Value="1145" Weight="0" />

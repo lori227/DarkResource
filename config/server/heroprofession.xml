@@ -1,4 +1,4 @@
-<root version="2297">
+<root version="2322">
 	<item Id="1100" RaceLimit="1602" SexLimit="1" WeaponType="1801" MoveType="1701" Mobility="3" MaxEP="4" ClassLv="1" Attr_maxhp="150" Attr_atk="75" Attr_def="50" Attr_res="50" Attr_tal="21" Attr_spd="21" Attr_luk="21" MaxLevel="10" />
 	<item Id="1101" RaceLimit="1602" SexLimit="1" WeaponType="1801" MoveType="1701" Mobility="3" MaxEP="6" ClassLv="2" Attr_maxhp="180" Attr_atk="90" Attr_def="60" Attr_res="60" Attr_tal="25" Attr_spd="25" Attr_luk="25" MaxLevel="20" />
 	<item Id="1102" RaceLimit="1602" SexLimit="1" WeaponType="1801" MoveType="1701" Mobility="3" MaxEP="8" ClassLv="3" Attr_maxhp="195" Attr_atk="98" Attr_def="65" Attr_res="65" Attr_tal="27" Attr_spd="27" Attr_luk="27" MaxLevel="30" />
@@ -39,11 +39,11 @@
 	<item Id="1147" RaceLimit="1603" SexLimit="2" WeaponType="1806" MoveType="1701" Mobility="3" MaxEP="8" ClassLv="3" Attr_maxhp="205" Attr_atk="78" Attr_def="42" Attr_res="101" Attr_tal="25" Attr_spd="30" Attr_luk="31" MaxLevel="30" />
 	<item Id="1148" RaceLimit="1603" SexLimit="2" WeaponType="1806" MoveType="1701" Mobility="3" MaxEP="6" ClassLv="2" Attr_maxhp="207" Attr_atk="74" Attr_def="45" Attr_res="87" Attr_tal="24" Attr_spd="27" Attr_luk="24" MaxLevel="20" />
 	<item Id="1149" RaceLimit="1603" SexLimit="2" WeaponType="1806" MoveType="1701" Mobility="3" MaxEP="8" ClassLv="3" Attr_maxhp="224" Attr_atk="80" Attr_def="49" Attr_res="94" Attr_tal="26" Attr_spd="29" Attr_luk="26" MaxLevel="30" />
-	<item Id="1129" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="4" ClassLv="1" Attr_maxhp="176" Attr_atk="71" Attr_def="53" Attr_res="35" Attr_tal="21" Attr_spd="15" Attr_luk="27" MaxLevel="10" />
-	<item Id="1130" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="6" ClassLv="2" Attr_maxhp="216" Attr_atk="83" Attr_def="63" Attr_res="42" Attr_tal="23" Attr_spd="23" Attr_luk="33" MaxLevel="20" />
-	<item Id="1131" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="8" ClassLv="3" Attr_maxhp="234" Attr_atk="90" Attr_def="68" Attr_res="46" Attr_tal="25" Attr_spd="25" Attr_luk="35" MaxLevel="30" />
-	<item Id="1132" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="6" ClassLv="2" Attr_maxhp="212" Attr_atk="90" Attr_def="61" Attr_res="39" Attr_tal="21" Attr_spd="25" Attr_luk="33" MaxLevel="20" />
-	<item Id="1133" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="8" ClassLv="3" Attr_maxhp="229" Attr_atk="97" Attr_def="66" Attr_res="42" Attr_tal="23" Attr_spd="27" Attr_luk="35" MaxLevel="30" />
+	<item Id="1129" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="4" ClassLv="1" Attr_maxhp="188" Attr_atk="71" Attr_def="48" Attr_res="8" Attr_tal="21" Attr_spd="15" Attr_luk="33" MaxLevel="10" />
+	<item Id="1130" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="6" ClassLv="2" Attr_maxhp="225" Attr_atk="86" Attr_def="57" Attr_res="9" Attr_tal="25" Attr_spd="18" Attr_luk="39" MaxLevel="20" />
+	<item Id="1131" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="8" ClassLv="3" Attr_maxhp="244" Attr_atk="93" Attr_def="62" Attr_res="10" Attr_tal="27" Attr_spd="19" Attr_luk="42" MaxLevel="30" />
+	<item Id="1132" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="6" ClassLv="2" Attr_maxhp="212" Attr_atk="90" Attr_def="61" Attr_res="9" Attr_tal="21" Attr_spd="25" Attr_luk="39" MaxLevel="20" />
+	<item Id="1133" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1701" Mobility="3" MaxEP="8" ClassLv="3" Attr_maxhp="229" Attr_atk="97" Attr_def="66" Attr_res="10" Attr_tal="23" Attr_spd="27" Attr_luk="42" MaxLevel="30" />
 	<item Id="1134" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1702" Mobility="5" MaxEP="4" ClassLv="1" Attr_maxhp="169" Attr_atk="81" Attr_def="49" Attr_res="28" Attr_tal="21" Attr_spd="21" Attr_luk="21" MaxLevel="10" />
 	<item Id="1135" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1702" Mobility="5" MaxEP="6" ClassLv="2" Attr_maxhp="203" Attr_atk="97" Attr_def="58" Attr_res="33" Attr_tal="25" Attr_spd="25" Attr_luk="25" MaxLevel="20" />
 	<item Id="1136" RaceLimit="1601" SexLimit="1" WeaponType="1802" MoveType="1702" Mobility="5" MaxEP="8" ClassLv="3" Attr_maxhp="219" Attr_atk="105" Attr_def="63" Attr_res="36" Attr_tal="27" Attr_spd="27" Attr_luk="27" MaxLevel="30" />

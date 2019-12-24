@@ -1,4 +1,4 @@
-<root version="2309">
+<root version="2333">
 	<item name="configSimple" version="7" />
 	<item name="CWAssetCfg" version="14" />
 	<item name="buildskin" version="18" />
@@ -75,7 +75,6 @@
 	<item name="status" version="1982" />
 	<item name="heroskill" version="1991" />
 	<item name="herocharacter" version="1993" />
-	<item name="heroweightpool" version="1993" />
 	<item name="unlockcondition" version="2007" />
 	<item name="unlock" version="2007" />
 	<item name="maincamp_camera" version="2016" />
@@ -102,22 +101,24 @@
 	<item name="chapter" version="2176" />
 	<item name="minimap" version="2180" />
 	<item name="dialogue" version="2196" />
-	<item name="taskchainrefresh" version="2205" />
 	<item name="herolevel" version="2207" />
 	<item name="buildbasics" version="2215" />
-	<item name="conditiondefine" version="2229" />
 	<item name="uitext" version="2232" />
 	<item name="tipstext" version="2236" />
 	<item name="itemtype" version="2238" />
 	<item name="tasktext" version="2272" />
-	<item name="taskchain" version="2275" />
-	<item name="class" version="2281" />
 	<item name="task" version="2288" />
-	<item name="buildlevel" version="2294" />
 	<item name="herorace" version="2294" />
-	<item name="heroprofession" version="2297" />
-	<item name="npcgenerate" version="2301" />
-	<item name="technology" version="2303" />
 	<item name="itemweapon" version="2306" />
-	<item name="rolebasetext" version="2309" />
+	<item name="initialprocess" version="2310" />
+	<item name="conditiondefine" version="2317" />
+	<item name="heroweightpool" version="2318" />
+	<item name="heroprofession" version="2322" />
+	<item name="npcgenerate" version="2324" />
+	<item name="buildlevel" version="2326" />
+	<item name="technology" version="2326" />
+	<item name="rolebasetext" version="2328" />
+	<item name="taskchainrefresh" version="2332" />
+	<item name="taskchain" version="2332" />
+	<item name="class" version="2333" />
 </root>

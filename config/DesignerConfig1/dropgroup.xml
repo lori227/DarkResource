@@ -1,4 +1,4 @@
-<root version="2290">
+<root version="2319">
 	<item Id="5000001" RandType="2" DropDataId="6000001" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
 	<item Id="5000001" RandType="2" DropDataId="6001001" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
 	<item Id="5000001" RandType="2" DropDataId="6002001" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
@@ -659,4 +659,16 @@
 	<item Id="5900145" RandType="2" DropDataId="6900145" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
 	<item Id="8000001" RandType="2" DropDataId="8000001" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
 	<item Id="8000002" RandType="2" DropDataId="8000002" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100001" RandType="2" DropDataId="8100001" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100002" RandType="2" DropDataId="8100002" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100003" RandType="2" DropDataId="8100003" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100004" RandType="2" DropDataId="8100004" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100005" RandType="2" DropDataId="8100005" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100006" RandType="2" DropDataId="8100006" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100007" RandType="2" DropDataId="8100007" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100008" RandType="2" DropDataId="8100008" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100009" RandType="2" DropDataId="8100009" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100010" RandType="2" DropDataId="8100010" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100011" RandType="2" DropDataId="8100011" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
+	<item Id="8100012" RandType="2" DropDataId="8100012" Weight="10000" DropCount="0" Reset="0" ConditionType="1" Condition="" />
 </root>

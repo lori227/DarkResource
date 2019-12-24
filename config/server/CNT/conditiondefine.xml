@@ -1,4 +1,4 @@
-<root version="2229">
+<root version="2317">
 	<item Id="exploreclean" ParentName="player" DataName="mapid" CallType="3" InitCalc="" TriggerType="3" TriggerCheck="16" TriggerUse="2" TriggerValue="0" UseOperate="3" UseType="0" UseValue="0" />
 	<item Id="pveclean" ParentName="player" DataName="pveid" CallType="3" InitCalc="" TriggerType="3" TriggerCheck="16" TriggerUse="2" TriggerValue="0" UseOperate="3" UseType="0" UseValue="0" />
 	<item Id="explore" ParentName="balance" DataName="exploreresult" CallType="3" InitCalc="" TriggerType="3" TriggerCheck="0" TriggerUse="0" TriggerValue="0" UseOperate="1" UseType="0" UseValue="1" />
@@ -36,7 +36,7 @@
 	<item Id="addhero" ParentName="hero" DataName="" CallType="1" InitCalc="" TriggerType="0" TriggerCheck="0" TriggerUse="0" TriggerValue="0" UseOperate="1" UseType="0" UseValue="1" />
 	<item Id="deathhero" ParentName="hero" DataName="durability" CallType="2" InitCalc="" TriggerType="0" TriggerCheck="13" TriggerUse="2" TriggerValue="0" UseOperate="1" UseType="0" UseValue="1" />
 	<item Id="removehero" ParentName="hero" DataName="durability" CallType="2" InitCalc="" TriggerType="0" TriggerCheck="16" TriggerUse="2" TriggerValue="0" UseOperate="1" UseType="0" UseValue="1" />
-	<item Id="killnpc" ParentName="npc" DataName="" CallType="1" InitCalc="" TriggerType="0" TriggerCheck="0" TriggerUse="0" TriggerValue="0" UseOperate="1" UseType="0" UseValue="1" />
+	<item Id="killnpc" ParentName="npc" DataName="" CallType="2" InitCalc="" TriggerType="0" TriggerCheck="0" TriggerUse="0" TriggerValue="0" UseOperate="1" UseType="0" UseValue="1" />
 	<item Id="interaction" ParentName="interaction" DataName="id" CallType="3" InitCalc="" TriggerType="3" TriggerCheck="0" TriggerUse="0" TriggerValue="0" UseOperate="1" UseType="0" UseValue="1" />
 	<item Id="dialogue" ParentName="dialogue" DataName="id" CallType="3" InitCalc="" TriggerType="3" TriggerCheck="0" TriggerUse="0" TriggerValue="0" UseOperate="3" UseType="0" UseValue="1" />
 	<item Id="technology" ParentName="technology" DataName="status" CallType="1" InitCalc="2" TriggerType="0" TriggerCheck="13" TriggerUse="0" TriggerValue="1" UseOperate="1" UseType="0" UseValue="1" />
