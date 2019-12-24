@@ -1,4 +1,4 @@
-<root version="2331">
+<root version="2355">
 	<item Id="1" Npc="11124012|11130012|11101012|11132012" DropVictory="" DropFail="" Consume="" />
 	<item Id="2" Npc="11132012|11111012|11103012|11111012|11108012|11111012|11124012|11111012" DropVictory="" DropFail="" Consume="" />
 	<item Id="3" Npc="11130012|11103012|11101012|11108012" DropVictory="" DropFail="" Consume="" />
@@ -42,7 +42,7 @@
 	<item Id="410009" Npc="11100003|11100003|11100003|11100003|11129004|11129004" DropVictory="5300011" DropFail="" Consume="" />
 	<item Id="410010" Npc="11105003|11105003|11105003|11105003|11100004|11100004" DropVictory="5300011" DropFail="" Consume="" />
 	<item Id="410011" Npc="11100003|11100003|11105003|11105003|11129004|11129004" DropVictory="5300011" DropFail="" Consume="" />
-	<item Id="410012" Npc="11126004|11100004|11129004|11100004" DropVictory="5301011" DropFail="" Consume="" />
+	<item Id="410012" Npc="11126003|11100003|11129003|11100003" DropVictory="5301011" DropFail="" Consume="" />
 	<item Id="410013" Npc="11100001|11100001|11105002|11105002" DropVictory="5300011" DropFail="" Consume="" />
 	<item Id="410014" Npc="11129001|11100002|11100002|11123001" DropVictory="5300011" DropFail="" Consume="" />
 	<item Id="410015" Npc="11105002|11105002|11105002|11123001" DropVictory="5300011" DropFail="" Consume="" />
