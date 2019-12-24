@@ -55,6 +55,8 @@ enum ProjectCodeEnum
 	HeroRecruitRefreshGenerate  = 31135;	// 招募英雄刷新池错误, 是否科技解锁错误
 	HeroRecruitRefreshWeight    = 31136;	// 招募英雄刷新权重错误, 是否科技解锁错误
 	HeroRefreshCountNotEnough   = 31137;	// 刷新数量不够
+	HeroRecruitRefreshSuc		= 31138;	// 招募刷新成功
+	HeroRecruitHeroSuc			= 31139;	// 招募英雄成功
 
 	// build
 	TrainCampLevelError			= 31200;	// 训练所等级错误
@@ -91,6 +93,8 @@ enum ProjectCodeEnum
 	TechnologyLackPreCondition	= 31231;	// 前置条件不满足
 	TechnologyIsUnlock			= 31232;	// 当前科技已解锁
 	TechnologyIslock			= 31233;	// 当前科技未解锁
+	BuildUpgradeSuc				= 31234;	// 建筑升级成功
+	TrainNotFinish				= 31235;	// 训练还未完成
 
 	// explore
 	ExploreMapLimit				= 31303;	// 只能同时探索一个地图
@@ -102,6 +106,8 @@ enum ProjectCodeEnum
 	ExploreNotInStatus			= 31309;	// 不在探索状态
 	PVENotInStatus				= 31310;	// 不在pve状态
 	ExploreHeroTeamEmpty		= 31311;	// 请先编组出战英雄					
+	ExploreHeroTeamExist		= 31312;	// 编组已存在
+	PVEMapIdError				= 31313;	// pve的地图id错误
 
 	// chapter
 	ChapterIdError				= 32401;	// 章节配置错误

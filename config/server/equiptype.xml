@@ -1,8 +1,8 @@
-<root version="101">
-	<item Id="1801" DefaultId="1" />
-	<item Id="1802" DefaultId="1" />
-	<item Id="1803" DefaultId="1" />
-	<item Id="1804" DefaultId="1" />
-	<item Id="1805" DefaultId="1" />
-	<item Id="1806" DefaultId="1" />
+<root version="575">
+	<item Id="1801" DamType="1" />
+	<item Id="1802" DamType="1" />
+	<item Id="1803" DamType="1" />
+	<item Id="1804" DamType="1" />
+	<item Id="1805" DamType="2" />
+	<item Id="1806" DamType="2" />
 </root>

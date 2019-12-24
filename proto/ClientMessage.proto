@@ -34,6 +34,7 @@ enum ClientProtocol
 	MSG_TRAIN_CHANGE_REQ			= 3200;	// 训练改变请求(增加删除)
 	MSG_TRAIN_CLEAN_REQ				= 3201;	// 一键清空训练栏
 	MSG_TRAIN_ONEKEY_REQ			= 3202;	// 一键完成训练栏
+	MSG_TRAIN_AGAIN_REQ				= 3203;	// 再次训练请求
 
 	// clinic
 	MSG_CLINIC_CURE_REQ				= 3210;	// 治疗请求
@@ -79,6 +80,7 @@ enum ClientProtocol
 	MSG_KILL_NPC_REQ				= 3317;	// 击杀npc怪物
 	MSG_UPDATE_FAITH_REQ			= 3318;	// 更新信仰请求
 	MSG_INTERACT_ITEM_REQ			= 3319;	// 交互物件请求
+	MSG_FIGHT_HERO_LIST_REQ			= 3320;	// 同步出战英雄列表
 
 
 	// daily
@@ -87,6 +89,9 @@ enum ClientProtocol
 	
 	// chapter
 	MSG_CHAPTER_EXECUTE_STATUS_REQ	= 3371;	// 请求执行章节状态
+
+	// stage
+	MSG_UPDATE_MAIN_STAGE_REQ		= 3381;	// 更新主线流程
 	
 	// item
 	MSG_HERO_WEAPON_REQ				= 3400;	// 给英雄装备武器
@@ -266,6 +271,13 @@ message MsgTrainOnekeyReq
 	uint32 index = 1;	// 训练栏的位置(索引从1开始)
 }
 
+// 再次训练请求
+// MSG_TRAIN_AGAIN_REQ
+message MsgTrainAgainReq
+{
+	uint32 index = 1;	// 训练栏的位置
+}
+
 // 治疗请求
 // MSG_CLINIC_CURE_REQ
 message MsgClinicCureReq
@@ -335,6 +347,8 @@ message MsgPVEReq
 {
 	uint32 pveid = 1;		// 战斗id
 	uint32 battleid = 2;	// 地形id
+	bytes modulename = 3;	// 模块名
+	uint32 mapid = 4;		// 探索地图( 如果是在探索里 )
 }
 
 // 战斗回应	(生成npc)
@@ -355,7 +369,6 @@ message MsgPVEBalanceReq
 {
 	uint32 result = 1;				// 战斗结果 1=成功 2=失败
 	uint32 truns = 2;				// 战斗回合数
-	repeated uint64 herolist = 3;	// 上阵英雄uuid列表
 }
 
 // 战斗结算结果
@@ -441,6 +454,12 @@ message MsgInteractItemReq
 	uint32 field = 2;		// 交互场所(1：探索 2:战斗)
 }
 
+// 同步出战英雄列表
+// MSG_FIGHT_HERO_LIST_REQ
+message MsgFightHeroListReq
+{
+	repeated uint64 herolist = 3;	// 出战英雄uuid列表
+}
 
 // 更新战斗数据
 // MSG_UPDATE_FIGHTER_HERO_REQ
@@ -525,6 +544,15 @@ message MsgChapterExecuteStatusReq
 {
 	uint32 chapterid = 1;
 }
+
+// 更新主线流程
+// MSG_UPDATE_MAIN_STAGE_REQ
+message MsgUpdateMainStageReq
+{
+	uint32 stageid = 1;		// 流程id
+}
+
+
 ////////////////////////////////////////////////////
 // 给英雄装备武器
 // MSG_HERO_WEAPON_REQ

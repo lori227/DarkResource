@@ -109,6 +109,7 @@ message PBExplorePlayerData
     int32 z = 3;
     int32 yaw = 4;
     uint32 step = 5;        // 没有计算的移动步数
+    repeated int32 fovarr = 6;     // 视野列表
 }
 
 message PBExploreNpcData
