@@ -1,6 +1,13 @@
 syntax = "proto3";
 package KFMsg;
 
+enum ConstDefineEnum
+{
+	option allow_alias = true;
+	UnknowConse = 0;
+	InfiniteStep = 99999;		// 无限移动步数
+	InfiniteTurn = 99999;		// 无限回合数
+}
 //////////////////////////////////////////////////////////////////////////////////
 enum CampEnum
 {
@@ -27,23 +34,20 @@ enum DivisorEnum
 	DivisorOfWeapon = 3;		// 武器类型偏好因子
 }
 //////////////////////////////////////////////////////////////////////////////////
-
 enum HeroLockEnum
 {
 	NoLock = 0;			// 无锁定
 	HeroListLock = 1;	// 锁定在英雄列表
-
 	CountLock = 2;		// 锁定标记数量
 }
-//////////////////////////////////////////////////////////////////////////////////
-enum BalanceEnum
-{
-	UnknowBalance = 0;	// 无效值
-	Victory = 1;		// 胜利
-	Failed = 2;			// 失败
-	Flee = 3;			// 逃跑
-}
 
+enum HeroRemoveEnum
+{
+	RemoveUnknown = 0;		// 未知
+	Dismissal = 101;		// 解雇
+	Retirement = 102;		// 解约/退役
+}
+//////////////////////////////////////////////////////////////////////////////////
 // 建筑类型
 enum BuildEnum
 {
@@ -87,12 +91,13 @@ enum LifeEventEnum
 // 游戏状态
 enum PlayerStatusEnumEx
 {
-	UnknowStatus = 0;	// 无效
-	OnlineStatus = 1;	// 在线
-	OfflineStatus = 2;	// 离线
-	ExploreStatus = 3;	// 探索
-	PVEStatus = 4;		// PVE
-	PVPStatus = 5;		// PVP
+	UnknowStatus = 0;		// 无效
+	OnlineStatus = 1;		// 在线
+	OfflineStatus = 2;		// 离线
+	ExploreStatus = 3;		// 探索
+	PVEStatus = 4;			// PVE
+	PVPStatus = 5;			// PVP
+	DropSelectStatus = 6;	// 掉落选择
 }
 //////////////////////////////////////////////////////////////////////////////////
 // 小红点
@@ -132,12 +137,64 @@ enum ItemAutoEnum
 	AutoDestory = 2;	// 自动销毁
 }
 
-enum HeroDeathReason
+// 初始流程类型
+enum InitialProcessEnum
 {
-	NoDeathReason = 0;	// 无死亡原因(存活)
-	NoExist = 1;	// 不存在单位
-	NoEnoughHp = 2; // 血量不足
-	NoEnoughDurability = 3; // 耐久度不足
+	ProcessInvalid = 0;	// 无效
+
+	ProcessCG = 1;			// 播放CG
+	ProcessPVE = 2;			// 战斗
+	ProcessExplore = 3;		// 探索
+	ProcessChapter = 4;		// 章节点
+	ProcessTask = 5;		// 任务
+	ProcessScene = 6;		// 场景
+	UIDialogue = 7;			// UI对话
+	BubbleDialogue = 8;		// 气泡对话
+	ProcessSequence = 9;	// 过场
+	ChapterAndStory = 10;	// 章节点和剧情
+	ProcessStory = 11;		// 剧情
+}
+//////////////////////////////////////////////////////////////////////////////////
+enum RealmEnterEnum
+{
+	EnterInvalid = 0;	// 无效
+
+	EnterChapter = 1;	// 世界地图
+	EnterLogin = 2;		// 断线重连
+	EnterTown = 3;		// 回城回归
+	EnterJump = 4;		// 跳转地图
+	EnterExtend = 5;	// 进裂隙层
 }
 
+enum ExtendLevelEnum
+{
+	ExtendLevelInvalid = 0;	// 无效
+	ExtendLevel = 10000;	// 裂隙层起始层数
+}
+
+enum BalanceEnum
+{
+	UnknowBalance = 0;	// 无效值
+	Victory = 1;		// 胜利
+	Failed = 2;			// 失败
+	Flee = 3;			// 逃跑
+	Town = 4;			// 回城
+	Ace = 5;			// 团灭
+	Chapter = 100;		// 切换秘境结算(服务器使用)
+}
+
+enum JumpEnum
+{
+	JumpInvalid = 0;	// 无效
+	Leave = 1;			// 离开
+	Enter = 2;			// 进入
+}
 //////////////////////////////////////////////////////////////////////////////////
+enum RealmTimeEnum
+{
+	TimeInvalid = 0;	// 无效
+
+	Morning = 1;		// 上午
+	Afternoon = 2;		// 下午
+	Night = 3;			// 晚上
+}

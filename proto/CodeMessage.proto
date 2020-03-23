@@ -57,6 +57,14 @@ enum ProjectCodeEnum
 	HeroRefreshCountNotEnough   = 31137;	// 刷新数量不够
 	HeroRecruitRefreshSuc		= 31138;	// 招募刷新成功
 	HeroRecruitHeroSuc			= 31139;	// 招募英雄成功
+	HeroDurabilityNotZero		= 31140;	// 英雄耐久度不为0
+	ContractTimeFormulaError	= 31141;	// 签约时间公式错误
+	ContractPriceFormulaError	= 31142;	// 签约价格公式错误
+	ContractTimeIsZero			= 31143;	// 该英雄续签年限为0
+	HeroTeamDurabilityNotEnough	= 31144;	// 队伍中英雄的耐久度不足
+	HeroContractSuc				= 31145;	// 英雄续签成功
+	HeroRetireSuc				= 31146;	// 英雄退役成功
+	SpecialHeroCanNotRemove		= 31147;	// 订制英雄不能被删除
 
 	// build
 	TrainCampLevelError			= 31200;	// 训练所等级错误
@@ -95,19 +103,43 @@ enum ProjectCodeEnum
 	TechnologyIslock			= 31233;	// 当前科技未解锁
 	BuildUpgradeSuc				= 31234;	// 建筑升级成功
 	TrainNotFinish				= 31235;	// 训练还未完成
+	SmithyMakeLevelLimit		= 31236;	// 打造武器等级限制
+	FormulaParamError			= 31237;	// 公式参数错误
+	GranaryBuyCountLimit		= 31238;	// 购买粮食次数不足
+	GranaryBuySettingError		= 31239;	// 购买粮食配置错误
+	GranaryBuyParamError		= 31240;	// 购买粮食参数错误
 
-	// explore
-	ExploreMapLimit				= 31303;	// 只能同时探索一个地图
-	ExploreMapError				= 31304;	// 探索地图错误
-	ExploreNotInExplore			= 31305;	// 不在探索状态中
+	// realm
+	RealmMapError				= 31301;	// 探索地图错误
+	RealmLevelError				= 31302;	// 探索层数错误
+	RealmNotInExplore			= 31305;	// 不在探索状态中
 	PVEIdError					= 31306;	// 战斗id错误
 	PVEAlready					= 31307;	// 已经在战斗中
-	ExploreAlready				= 31308;	// 已经在探索中
-	ExploreNotInStatus			= 31309;	// 不在探索状态
+	RealmAlready				= 31308;	// 已经在探索中
+	RealmNotInStatus			= 31309;	// 不在探索状态
 	PVENotInStatus				= 31310;	// 不在pve状态
-	ExploreHeroTeamEmpty		= 31311;	// 请先编组出战英雄					
-	ExploreHeroTeamExist		= 31312;	// 编组已存在
+	PVEHeroTeamEmpty			= 31311;	// 请先编组出战英雄					
+	PVEHeroTeamExist			= 31312;	// 编组已存在
 	PVEMapIdError				= 31313;	// pve的地图id错误
+	RealmDataError				= 31314;	// 探索数据错误
+	RealmIdMismatch				= 31315;	// 探索数据与地图id不匹配
+	RealmNotTown				= 31316;	// 不在回城状态
+	RealmInTown					= 31317;	// 回城状态
+	RealmHeroTeamEmpty			= 31318;	// 请先编组出战英雄			
+	PVECanNotFlee				= 31319;	// 战斗不能逃跑		
+	NpcGroupError				= 31320;	// npc敌人组错误
+	GambleIdError				= 31321;	// 道具摇奖id错误
+	GambleParamError			= 31323;	// 摇奖配置参数错误
+	ExchangeIdError				= 31324;	// 交换id错误
+	ExchangeNotRune				= 31325;	// 不是符石道具
+	ExchangeLevelError			= 31326;	// 交换等级错误
+	SelectIdError				= 31327;	// 掉落选择id错误
+	SelectCountError			= 31328;	// 掉落选择数量错误
+	SelectUUIDError				= 31329;	// 掉落选择道具错误
+	SelectRecordError			= 31330;	// 掉落选择背包错误
+	MultiEventIdError			= 31331;	// 多选项事件id错误
+	MultiEventIndexError		= 31332;	// 多选项事件索引错误
+	NpcRandError				= 31333;	// npc随机敌人组id错误
 
 	// chapter
 	ChapterIdError				= 32401;	// 章节配置错误
@@ -128,6 +160,15 @@ enum ProjectCodeEnum
 	ItemUnWeaponFailed			= 32507;	// 卸下装备失败
 	ItemUnWeaponOk				= 32508;	// 卸下装备成功
 	ItemUpdateDurabilityError	= 32509;	// 更新耐久操作类型错误
+	ItemCanNotUseToHero			= 32510;	// 该物品不能对英雄使用
+	RuneIsNotAutoSet			= 32511;	// 符石不是自动装备
+	RuneSlotIsFull				= 32512;	// 符石槽已满
+	RuneSlotIndexError			= 32513;	// 符石槽位置错误
+	RuneSameTypeLimit			= 32514;	// 已装备同类型符石
+	RunePutOnSuc				= 32515;	// 符石穿上成功
+	RuneTakeOffSuc				= 32516;	// 符石脱下成功
+	RuneTakeOffFail				= 32517;	// 符石脱下失败
+	RuneSlotIsEmpty				= 32518;	// 当前符石槽为空
 
 	// attribute-extra
 	PlayerHeadIconSetOK			= 32601;	// 玩家头像设置成功
@@ -136,4 +177,18 @@ enum ProjectCodeEnum
 	PlayerFactionNotExist		= 32604;	// 玩家势力数据不存在
 	PlayerHeadIconNotHad		= 32605;	// 该头像未拥有
 
+	// story
+	StorySettingNotExist		= 32700;	// 剧情配置不存在
+	StoryNotExist				= 32701;	// 该剧情不存在
+	StorySequenceIsError		= 32702;	// 剧情序列错误
+	StoryTriggerTypeLimit		= 32703;	// 剧情触发类型限制
+	DialogueSettingNotExist		= 32704;	// 对话配置不存在
+	DialogueNotExist			= 32705;	// 对话不存在
+	DialogueHaveNotBranch		= 32706;	// 对话没有分支
+	DialogueBranchNotExist		= 32707;	// 对话分支不存在
+	DialogueBranchLackCondition	= 32708;	// 分支条件不足
+	BranchSettingNotExist		= 32709;	// 对话分支配置不存在
+	DialogueBranchSelectSuc		= 32710;	// 对话分支选择成功
+	StoryHaveDialogueBranch		= 32711;	// 剧情对话有分支，不能完成
+	StorySequenceNotFinish		= 32712;	// 当前剧情序列没有完成
 }

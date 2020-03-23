@@ -1,0 +1,9 @@
+<root platform="" version="2899">
+	<item Id="101" MinCount="7" MaxCount="7" MinWeight="1" MaxWeight="100" Name="rune" Key="0" MinValue="1" MaxValue="1" />
+	<item Id="101" MinCount="7" MaxCount="7" MinWeight="1" MaxWeight="100" Name="dechp" Key="0" MinValue="1" MaxValue="1" />
+	<item Id="101" MinCount="7" MaxCount="7" MinWeight="1" MaxWeight="100" Name="faith" Key="0" MinValue="1" MaxValue="1" />
+	<item Id="101" MinCount="7" MaxCount="7" MinWeight="1" MaxWeight="100" Name="foodpercent" Key="1000017" MinValue="5000" MaxValue="5000" />
+	<item Id="101" MinCount="7" MaxCount="7" MinWeight="1" MaxWeight="100" Name="moneypercent" Key="1900000" MinValue="5000" MaxValue="5000" />
+	<item Id="101" MinCount="7" MaxCount="7" MinWeight="1" MaxWeight="100" Name="suppliespercent" Key="1900002" MinValue="5000" MaxValue="5000" />
+	<item Id="102" MinCount="1" MaxCount="1" MinWeight="1" MaxWeight="100" Name="addbuff" Key="0" MinValue="5800001" MaxValue="5800001" />
+</root>

@@ -29,12 +29,22 @@ enum ClientProtocol
 	MSG_SET_HERO_NAME_REQ			= 3110; // 设置英雄名字
 	MSG_SET_RECRUIT_HERO_NAME_REQ 	= 3111; // 设置招募所英雄名字
 	MSG_SET_HERO_ACTIVE_SKILL_REQ	= 3112; // 选择英雄主动技能
+	MSG_ADD_TEAM_HP_REQ				= 3113;	// 增加队伍hp
+	MSG_DEC_TEAM_HP_REQ				= 3114;	// 减少队伍hp
+	MSG_CONTRACT_DATA_REQ			= 3115;	// 签约英雄数据请求
+	MSG_CONTRACT_DATA_ACK			= 3116;	// 签约英雄数据返回
+	MSG_CONTRACT_HERO_REQ			= 3117;	// 签约英雄请求
+	MSG_RETIRE_HERO_REQ				= 3118;	// 退役英雄请求
 
 	// train
 	MSG_TRAIN_CHANGE_REQ			= 3200;	// 训练改变请求(增加删除)
 	MSG_TRAIN_CLEAN_REQ				= 3201;	// 一键清空训练栏
 	MSG_TRAIN_ONEKEY_REQ			= 3202;	// 一键完成训练栏
 	MSG_TRAIN_AGAIN_REQ				= 3203;	// 再次训练请求
+	MSG_TRAIN_FEE_REQ				= 3204;	// 训练费用请求
+	MSG_TRAIN_FEE_ACK				= 3205;	// 训练费用响应
+	MSG_TRAIN_FEE_ONE_KEY_REQ		= 3206;	// 一键完成训练费用请求
+	MSG_TRAIN_FEE_ONE_KEY_ACK		= 3207;	// 一键完成训练费用响应
 
 	// clinic
 	MSG_CLINIC_CURE_REQ				= 3210;	// 治疗请求
@@ -43,10 +53,13 @@ enum ClientProtocol
 
 	// granary
 	MSG_GRANARY_GATHER_REQ			= 3215;	// 收获粮食
+	MSG_GRANARY_GATHER_ACK			= 3216;	// 收获粮食返回
+	MSG_GRANARY_BUY_REQ				= 3217;	// 购买粮食请求
 
 	// smithy
 	MSG_SMITHY_GATHER_REQ			= 3218;	// 收取铁匠铺材料
 	MSG_SMITHY_MAKE_REQ				= 3219;	// 打造武器
+	MSG_SMITHY_GATHER_ACK			= 3220;	// 收取铁匠铺材料返回
 
 	// maincamp
 	MSG_SET_BUILD_SKIN_REQ			= 3223;	// 设置建筑外观
@@ -62,17 +75,19 @@ enum ClientProtocol
 	MSG_TRANSFER_PRO_REQ			= 3250;	// 英雄转职请求
 	MSG_SELECT_INNATE_REQ			= 3251;	// 选择天赋请求
 
-	// explore
-	MSG_EXPLORE_REQ					= 3301;	// 进入探索地图请求
-	MSG_EXPLORE_ACK					= 3302;	// 进入探索地图回应
+	// realm
+	MSG_REALM_ENTER_REQ				= 3301;	// 进入秘境地图请求
+	MSG_REALM_ENTER_ACK				= 3302;	// 进入秘境地图回应
 	MSG_PVE_REQ						= 3303;	// 战斗请求(生成npc)
 	MSG_PVE_ACK						= 3304;	// 战斗回应	(生成npc)
 	MSG_PVE_BALANCE_REQ				= 3305; // PVE战斗结算	
-	MSG_EXIT_EXPLORE_REQ			= 3306; // 退出探索
+	MSG_REALM_EXIT_REQ				= 3306; // 退出秘境
+	MSG_REALM_JUMP_REQ				= 3307;	// 跳转秘境地图请求
 	MSG_UPDATE_FIGHTER_HERO_REQ		= 3308;	// 更新战斗数据
+	MSG_REALM_EXTEND_REQ          	= 3309; // 进入秘境裂隙层
 	MSG_PVE_BALANCE_ACK				= 3310;	// 战斗结算结果
-	MSG_EXPLORE_BALANCE_REQ			= 3311;	// 探索结算请求
-	MSG_EXPLORE_BALANCE_ACK			= 3312;	// 探索结算结果
+	MSG_REALM_BALANCE_REQ			= 3311;	// 探索结算请求
+	MSG_REALM_BALANCE_ACK			= 3312;	// 探索结算结果
 	MSG_UPDATE_EXPLORE_PLAYER_REQ	= 3313;	// 更新探索玩家数据
 	MSG_UPDATE_EXPLORE_NPC_REQ		= 3314;	// 更新探索npc数据
 	MSG_UPDATE_EXPLORE_BUFF_ACK		= 3315;	// 更新探索buff数据
@@ -81,7 +96,30 @@ enum ClientProtocol
 	MSG_UPDATE_FAITH_REQ			= 3318;	// 更新信仰请求
 	MSG_INTERACT_ITEM_REQ			= 3319;	// 交互物件请求
 	MSG_FIGHT_HERO_LIST_REQ			= 3320;	// 同步出战英雄列表
-
+	MSG_REALM_TOWN_REQ				= 3321;	// 秘境回城
+	MSG_PVE_FLEE_PUNISH_ACK			= 3322;	// 逃跑惩罚
+	MSG_UPDATE_FAITH_ACK			= 3323;	// 更新信仰值
+	MSG_GAMBLE_ITEM_SHOW_REQ		= 3324;	// 请求物品摇奖
+	MSG_GAMBLE_ITEM_SHOW_ACK		= 3325; // 请求物品摇奖	
+	MSG_GAMBLE_ITEM_START_REQ		= 3326;	// 开始物品摇奖
+	MSG_GAMBLE_ITEM_FINISH_ACK		= 3327;	// 摇奖结束
+	MSG_RUNE_EXCHANGE_START_REQ		= 3328;	// 符石交换
+	MSG_RUNE_EXCHANGE_FINISH_ACK	= 3329;	// 符石交换
+	MSG_DROP_SELECT_REQ				= 3330;	// 请求掉落选择
+	MSG_DROP_SELECT_ACK				= 3331;	// 请求掉落选择
+	MSG_SELECT_ITEM_REQ				= 3332;	// 选择掉落物品
+	MSG_SELECT_ITEM_ACK				= 3333;	// 选择掉落物品
+	MSG_MULTI_EVENT_REQ				= 3334;	// 多选项事件请求
+	MSG_MULTI_EVENT_ACK				= 3335;	// 多选项事件请求
+	MSG_ADD_TEAM_BUFF_REQ			= 3336;	// 添加队伍buff
+	MSG_REMOVE_TEAM_BUFF_REQ		= 3337;	// 删除队伍buff
+	MSG_NPC_GROUP_DATA_REQ			= 3338;	// 请求npc数据
+	MSG_NPC_GROUP_DATA_ACK			= 3339;	// 请求npc数据
+	MSG_LOGIC_EVENT_ACK				= 3340;	// 探索事件返回
+	MSG_PVE_TURN_START_REQ			= 3341;	// pve战斗回合开始
+	MSG_PVE_TURN_FINISH_REQ			= 3342;	// pve战斗回合结束
+	MSG_UPDATE_TIME_ACK				= 3343;	// 更新探索时间
+	MSG_UDPATE_WEATHER_ACK			= 3344;	// 更新探索天气
 
 	// daily
 	MSG_QUERY_RECORD_REQ			= 3351;	// 查询记录
@@ -98,10 +136,18 @@ enum ClientProtocol
 	MSG_HERO_UNWEAPON_REQ			= 3401;	// 给英雄脱武器
 	MSG_UPDATE_DURABILITY_REQ		= 3402;	// 更新武器耐久
 	MSG_HERO_WEAPON_ANOTHER_REQ		= 3403;	// 从影响身上装备武器到应该一个英雄身上
+	MSG_RUNE_PUT_ON_REQ				= 3404;	// 穿上符石
+	MSG_RUNE_TAKE_OFF_REQ			= 3405;	// 脱下符石
+	MSG_RUNE_EXCHANGE_REQ			= 3406;	// 交换符石
+	MSG_RUNE_COMPOUND_ACK			= 3407;	// 符石合成返回
 
 	// dialogue
-	MSG_DIALOGUE_START_ACK 			= 3431;	// 通知开始对话
-	MSG_DIALOGUE_FINISH_REQ 		= 3432;	// 告知结束对话
+	MSG_START_DIALOGUE_ACK 			= 3431;	// 开始对话返回
+	MSG_UPDATE_DIALOGUE_REQ 		= 3432;	// 更新对话序列
+	MSG_START_STORY_REQ				= 3433;	// 开始剧情请求
+	MSG_UPDATE_STORY_REQ			= 3434;	// 更新剧情请求
+	MSG_SELECT_DIALOGUE_BRANCH_REQ	= 3435;	// 选择对话分支
+	
 
 	// attribute-extra
 	MSG_SET_PLAYER_HEADICON_REQ 	= 3451;	// 设置玩家头像
@@ -278,6 +324,34 @@ message MsgTrainAgainReq
 	uint32 index = 1;	// 训练栏的位置
 }
 
+//训练费用请求
+//MSG_TRAIN_FEE_REQ
+message MsgTrainFeeReq
+{
+}
+
+// 一键完成训练费用请求
+// MSG_TRAIN_FEE_ONE_KEY_REQ
+message MsgTrainOneKeyFeeReq
+{
+	uint32 index = 1;	// 训练栏的位置(索引从1开始)
+}
+
+// 训练费用响应
+// MSG_TRAIN_FEE_ACK
+message MsgTrainFeeAck
+{
+	bytes element = 1;	// 消耗元数据
+}
+
+// 一键完成训练费用响应
+// MSG_TRAIN_FEE_ONE_KEY_ACK
+message MsgTrainOneKeyFeeAck
+{
+	uint32 index = 1;	// 训练栏的位置(索引从1开始)
+	bytes element = 2;	// 消耗元数据
+}
+
 // 治疗请求
 // MSG_CLINIC_CURE_REQ
 message MsgClinicCureReq
@@ -305,6 +379,19 @@ message MsgGranaryGatherReq
 {
 }
 
+// 收获粮食返回
+// MSG_GRANARY_GATHER_ACK
+message MsgGranaryGatherAck
+{
+	uint32 crit = 1;	// 是否暴击
+}
+
+// 购买粮食
+// MSG_GRANARY_BUY_REQ
+message MsgGranaryBuyReq
+{
+}
+
 // 收取铁匠铺材料
 // MSG_SMITHY_GATHER_REQ
 message MsgSmithyGatherReq
@@ -318,27 +405,78 @@ message MsgSmithyMakeReq
 	uint32 id = 1;		// 武器id
 	uint32 num = 2;		// 打造数量
 }
+
+// 收取铁匠铺材料返回
+// MSG_SMITHY_GATHER_ACK
+message MsgSmithyGatherAck
+{
+	uint32 crit = 1;	// 是否暴击
+}
+
 ////////////////////////////////////////////////////////////////////////////
-// 进入探索地图请求
-// MSG_EXPLORE_REQ	
-message MsgExploreReq
+// 进入秘境地图请求
+// MSG_REALM_ENTER_REQ	
+message MsgRealmEnterReq
 {
-	uint32 mapid = 1;			// 探索的地图id
+	uint32 type = 1;		// 进入的类型 枚举RealmEnterEnum
+	uint32 realmid = 2;		// 秘境id
 }
 
-// 进入探索地图回应
-// MSG_EXPLORE_ACK	
-message MsgExploreAck
+// 跳转秘境地图请求
+// MSG_REALM_JUMP_REQ	
+message MsgRealmJumpReq
 {
-	uint32 mapid = 1;				// 探索的地图id
-	PBExploreData exploredata = 2;	// 探索数据( 帮客户端保存的 )
+	uint32 level = 1;
+	uint32 birthplace = 2;
 }
 
-// 退出探索
-// MSG_EXIT_EXPLORE_REQ
-message MsgExitExploreReq
+// 进入秘境裂隙层请求
+// MSG_REALM_EXTEND_REQ	
+message MsgRealmExtendReq
+{
+	uint32 exploreid = 1;			// 探索的地图id
+}
+
+// 进入秘境地图回应
+// MSG_REALM_ENTER_ACK	
+message MsgRealmEnterAck
+{
+	PBExploreData exploredata = 1;	// 探索数据
+	uint32 faith = 2;               // 信仰值
+	uint32 realmid = 3;				// 秘境id
+    PBHeroBuffData buffdata = 4;    // buff数据
+	uint32 worldflag = 5;			// 里世界标记
+}
+
+// 退出秘境
+// MSG_REALM_EXIT_REQ
+message MsgRealmExitReq
 {
 
+}
+
+// 探索回城
+// MSG_REALM_TOWN_REQ
+message MsgRealmTownReq
+{
+
+}
+
+// 探索结算请求
+// MSG_REALM_BALANCE_REQ
+message MsgRealmBalanceReq
+{
+	uint32 result = 1;			// 战斗结果 1=成功 2=失败 3=逃跑
+}
+
+// 探索结算结果
+// MSG_REALM_BALANCE_ACK
+message MsgRealmBalanceAck
+{
+	uint32 result = 1;			// 战斗结果 1=成功 2=失败 3=逃跑
+	PBBalanceData balance = 2;	// 结算结果
+	uint32 level = 3;			// 当前层数
+	uint32 maxlevel = 4;		// 最大层数
 }
 
 // 战斗请求(生成npc)
@@ -346,9 +484,8 @@ message MsgExitExploreReq
 message MsgPVEReq
 {
 	uint32 pveid = 1;		// 战斗id
-	uint32 battleid = 2;	// 地形id
+	bytes npckey = 2;		// npckey
 	bytes modulename = 3;	// 模块名
-	uint32 mapid = 4;		// 探索地图( 如果是在探索里 )
 }
 
 // 战斗回应	(生成npc)
@@ -356,11 +493,38 @@ message MsgPVEReq
 message MsgPVEAck
 {
 	uint32 pveid = 1;		// 战斗id
-	uint32 battleid = 2;	// 地形id
+	uint32 spawnrule = 2;	// 出生规则
 	uint32 faith = 3;		// 信仰值
 	map< uint64, PBObject > hero = 4;	// 英雄列表
 	map< uint64, PBObject > npc = 5;	// npc列表
-	PBExploreBuffData buffdata = 6;		// buff数据
+	PBHeroBuffData buffdata = 6;		// buff数据
+	uint32 fleerate = 7;				// 逃跑成功率
+	uint32 worldflag = 8;				// 里世界标记
+	uint32 npcgroupid = 9;				// npc groupid
+	uint32 dungeonid = 10;				// 地形生成id
+	uint32 realmid = 11;				// 秘境id
+}
+
+// 请求生成npc数据
+// MSG_NPC_GROUP_DATA_REQ
+message MsgNpcGroupDataReq
+{
+	bytes npckey = 1;
+	repeated uint32 pveid = 2;		// pveid数组
+}
+
+// 请求生成npc数据
+// MSG_NPC_GROUP_DATA_ACK
+message MsgNpcGroupDataAck
+{
+	PBExploreNpcData npcdata = 1;		// npc显示数据
+}
+
+// 探索事件返回
+// MSG_LOGIC_EVENT_ACK
+message MsgLogicEventAck
+{
+	uint32 id = 1;			// 事件id
 }
 
 // 战斗结算请求
@@ -379,21 +543,15 @@ message MsgPVEBalanceAck
 	PBBalanceData balance = 2;	// 结算结果
 	bytes modulename = 3;		// 模块名
 	uint64 moduleid = 4;		// 模块id
+	uint32 realmid = 5;			// 如果在秘境中
 }
 
-// 探索结算请求
-// MSG_EXPLORE_BALANCE_REQ
-message MsgExploreBalanceReq
+// 逃跑惩罚
+// MSG_PVE_FLEE_PUNISH_ACK
+message MsgPVEFleePunishAck
 {
-	uint32 result = 1;			// 战斗结果 1=成功 2=失败 3=逃跑
-}
-
-// 探索结算结果
-// MSG_EXPLORE_BALANCE_ACK
-message MsgExploreBalanceAck
-{
-	uint32 result = 1;			// 战斗结果 1=成功 2=失败 3=逃跑
-	PBBalanceData balance = 2;	// 结算结果
+	bool success = 1;			// 是否逃跑成功
+	repeated PBPunishData punishdata = 2;	// 惩罚数据
 }
 
 // 更新探索玩家数据
@@ -410,18 +568,11 @@ message MsgUpdateExploreNpcReq
 	PBExploreNpcData npcdata = 1;
 }
 
-message PBBuffChangeData
-{
-    uint64 uuid = 1;				// 英雄id
-	uint32 buffid = 2;				// BuffId
-	uint32 operate = 3;				// 操作类型(1：增加 2：减少)
-}
-
 // 更新探索buff数据
 // MSG_UPDATE_EXPLORE_BUFF_ACK
 message MsgUpdateExploreBuffAck
 {
-	repeated PBBuffChangeData bufflist = 1;
+    PBHeroBuffData buffdata = 1;    // buff数据
 }
 
 // 探索掉落请求
@@ -444,6 +595,14 @@ message MsgKillNpcReq
 message MsgUpdateFaithReq
 {
 	uint32 faith = 1;		// 信仰值
+}
+
+// 更新信仰请求
+// MSG_UPDATE_FAITH_ACK
+message MsgUpdateFaithAck
+{
+	uint32 faith = 1;		// 信仰值
+	uint32 worldflag = 2;	// 里世界标记
 }
 
 // 交互物件请求
@@ -586,19 +745,78 @@ message MsgUpdateDurabilityReq
 	uint32 durability = 3;		// 耐久值
 }
 
-// 通知开始对话
-// MSG_DIALOGUE_START_ACK
-message MsgDialogueStartAck
+// 穿上符石
+// MSG_RUNE_PUT_ON_REQ
+message MsgRunePutOnReq
 {
-	uint32 dialogid = 1;
+	uint32 index = 1;		// 符石槽索引(为0时自动寻找)
+	uint64 itemuuid = 2;	// 道具uuid
 }
 
-// 告知结束对话
-// MSG_DIALOGUE_FINISH_REQ
-message MsgDialogueFinishReq
+// 脱下符石
+// MSG_RUNE_TAKE_OFF_REQ
+message MsgRuneTakeOffReq
 {
-	uint32 dialogueid = 1;
+	uint32 index = 1;		// 符石槽索引
 }
+
+// 交换符石
+// MSG_RUNE_EXCHANGE_REQ
+message MsgRuneExchangeReq
+{
+	uint32 oldindex = 1;	// 索引1
+	uint32 newindex = 2;	// 索引2
+}
+
+// 符石合成返回
+// MSG_RUNE_COMPOUND_ACK
+message MsgRuneCompoundAck
+{
+	repeated uint32 compoundlist = 1;	// 合成符石列表
+}
+
+
+// 开始对话返回
+// MSG_START_DIALOGUE_ACK
+message MsgStartDialogueAck
+{
+	uint32 dialogid = 1;		// 对话id
+	uint32 sequenceid = 2;		// 序列id
+	uint32 type = 3;			// 对话类型(7:UI对话 8:气泡对话)
+	uint32 storyid = 4;			// 剧情id
+}
+
+// 更新对话序列
+// MSG_UPDATE_DIALOGUE_REQ
+message MsgUpdateDialogueReq
+{
+	uint32 dialogueid = 1;		// 对话id
+	uint32 flag = 2;			// 跳转标记(0:分支序列 1:初始序列)
+}
+
+// 更新剧情请求
+// MSG_UPDATE_STORY_REQ
+message MsgUpdateStoryReq
+{
+	uint32 storyid = 1;			// 剧情id
+}
+
+// 开始剧情请求
+// MSG_START_STORY_REQ
+message MsgStartStoryReq
+{
+	uint32 storyid = 1;			// 剧情id
+	uint32 childid = 2;			// 子剧情id
+}
+
+// 选择对话分支
+// MSG_SELECT_DIALOGUE_BRANCH_REQ
+message MsgSelectDialogueBranchReq
+{
+	uint32 dialogueid = 1;		// 对话id
+	uint32 branchid = 2;		// 分支id
+}
+
 
 // 设置玩家头像
 // MSG_SET_PLAYER_HEADICON_REQ
@@ -612,4 +830,198 @@ message MsgSetPlayerHeadIconReq
 message MsgSetPlayerFactionReq
 {
 	uint32 factionid = 1;
+}
+
+// 请求物品摇奖
+// MSG_GAMBLE_ITEM_SHOW_REQ
+message MsgGambleItemShowReq
+{
+	uint32 gambleid = 1;	// 摇奖配置id
+}
+
+// 请求物品摇奖
+// MSG_GAMBLE_ITEM_SHOW_ACK
+message MsgGambleItemShowAck
+{
+	uint32 gambleid = 1;		// 摇奖配置id
+	uint32 gamblecount = 2;		// 第几次摇奖
+	uint32 costitemid = 3;		// 花费道具id
+	uint32 costitemcount = 4; 	// 花费道具数量
+}
+
+// 开始摇奖请求
+// MSG_GAMBLE_ITEM_START_REQ
+message MsgGambleItemStartReq
+{
+	uint32 gambleid = 1;		// 摇奖配置id
+}
+
+// 摇奖结束
+// MSG_GAMBLE_ITEM_FINISH_ACK
+message MsgGambleItemFinishAck
+{
+	uint32 gambleid = 1;			// 摇奖配置id
+	uint32 gamblecount = 2;			// 摇奖次数
+	uint32 costitemid = 3;			// 花费道具id
+	uint32 costitemcount = 4; 		// 花费道具数量
+	repeated uint32 showitemid = 5;	// 显示的道具列表(数组)
+	uint32 showindex = 6;			// 最终获得的道具索引
+}
+
+// 符石交换
+// MSG_RUNE_EXCHANGE_START_REQ
+message MsgRuneExchangeStartReq
+{
+	uint32 exchangeid = 1;	// 交换id
+	bytes itemname = 2;		// 背包名
+	uint64 itemuuid= 3;		// 道具uuid
+}
+
+// 符石交换
+// MSG_RUNE_EXCHANGE_FINISH_ACK
+message MsgRuneExchangeFinishAck
+{
+	uint32 exchangeid = 1;	// 交换id
+}
+
+// 请求掉落选择
+// MSG_DROP_SELECT_REQ
+message MsgDropSelectReq
+{
+	uint32 selectid = 1;	// 选择配置id
+}
+
+// 请求掉落选择
+// MSG_DROP_SELECT_ACK
+message MsgDropSelectAck
+{
+	uint32 selectid = 1;	// 选择配置id
+    uint32 selectcount = 2; // 选择数量
+}
+
+// 选择掉落武器
+// MSG_SELECT_ITEM_REQ
+message MsgSelectItemReq
+{
+	repeated uint64 itemuuid = 1;	// 选择的道具uuid
+}
+
+// 选择掉落武器
+// MSG_SELECT_ITEM_ACK
+message MsgSelectItemAck
+{
+
+}
+
+// 多选项事件请求
+// MSG_MULTI_EVENT_REQ
+message MsgMultiEventReq
+{
+	uint32 multieventid = 1;	// 配置id
+	uint32 index = 2;			// 第几项
+}
+
+// 多选项事件请求
+// MSG_MULTI_EVENT_ACK
+message MsgMultiEventAck
+{
+	uint32 multieventid = 1;	// 配置id
+	uint32 eventid = 2;			// 执行的事件id
+}
+
+// 添加buff
+// MSG_ADD_TEAM_BUFF_REQ
+message MsgAddTeamBuffReq
+{
+	map<uint32, uint32> bufflist = 1;
+}
+
+// 删除buff
+// MSG_REMOVE_TEAM_BUFF_REQ
+message MsgRemoveTeamBuffReq
+{
+	map<uint32, uint32> bufflist = 1;
+}
+
+// 添加hp
+// MSG_ADD_TEAM_HP_REQ
+message MsgAddTeamHpReq
+{
+	uint32 hpvalue = 1;		// 具体数值
+	uint32 hppecent = 2;	// 万分比
+	map<string, uint64> conditions = 3;	// 限制条件 如性别(sex, 1), 种族(race, 1111)
+}
+
+// 减少hp
+// MSG_DEC_TEAM_HP_REQ
+message MsgDecTeamHpReq
+{
+	uint32 hpvalue = 1;		// 具体数值
+	uint32 hppecent = 2;	// 万分比
+	map<string, uint64> conditions = 3;	// 限制条件 
+}
+
+// 签约英雄数据请求
+// MSG_CONTRACT_DATA_REQ
+message MsgContractDataReq
+{
+	uint64 uuid = 1;	// 英雄uuid
+}
+
+// 签约英雄数据返回
+// MSG_CONTRACT_DATA_ACK
+message MsgContractDataAck
+{
+	uint64 uuid = 1;		// 英雄uuid
+	uint32 durability = 2;	// 续签年限
+	bytes cost = 3;			// 续签费用
+}
+
+// 签约英雄请求
+// MSG_CONTRACT_HERO_REQ
+message MsgContractHeroReq
+{
+	uint64 uuid = 1;	// 英雄uuid
+}
+
+// 退役英雄请求
+// MSG_RETIRE_HERO_REQ
+message MsgRetireHeroReq
+{
+	uint64 uuid = 1;	// 英雄uuid
+}
+
+// PVE战斗回合开始
+// MSG_PVE_TURN_START_REQ
+message MsgPVETurnStartReq
+{
+	uint32 turn = 1;	// 当前第几回合开始
+}
+
+// PVE战斗回合结束
+// MSG_PVE_TURN_FINISH_REQ
+message MsgPVETurnFinsihReq
+{
+	uint32 turn = 1;	// 当前第几回合结束
+}
+
+// 更新时间
+// MSG_UPDATE_TIME_ACK
+message MsgUpdateTimeAck
+{
+	uint32 timetype = 1;		// 时间类型
+	uint32 realmduration = 2;	// 秘境持续时间, 不需要可以无视( 在探索中是移动步数, 在战斗中是回合数 )
+	uint32 pveduration = 3;		// pve持续时间, 不需要可以无视( 在探索中是移动步数, 在战斗中是回合数 )
+}
+
+// 更新天气
+// MSG_UDPATE_WEATHER_ACK
+message MsgUpdateWeatherAck
+{
+	uint32 weahterid = 1;				// 天气id
+	uint32 nextweahterid = 2;			// 下个天气id( 0表示没有 )
+	uint32 realmtotalduration = 3;		// 秘境总持续时间, 不需要可以无视( 在探索中是移动步数, 在战斗中是回合数 )
+	uint32 realmcurrentduration = 4;	// 秘境当前持续时间
+	uint32 pvetotalduration = 5;		// pve总持续时间, 不需要可以无视( 在探索中是移动步数, 在战斗中是回合数 )
+	uint32 pvecurrentduration = 6;		// pve当前持续时间( 0表是没有 )
 }

@@ -43,25 +43,17 @@ message PBBalanceHero
     uint32 exp = 6;                         // 获得的经验
     uint32 level = 7;                       // 总升级数
     bool death  = 8;                        // 是否死亡
-    map<string, uint32> attributes = 9;     // 属性列表
-    map<uint32, uint32> character = 20;     // 获得的性格( key=新性格 value=替换的性格( 0 表示没有 ) )
-    uint32 deathreason = 21;                // 死亡原因(参照HeroDeathReason)
-}
-
-// 货币结算信息
-message PBBalanceCurrency
-{
-    bytes name = 1;         // 名字
-    uint32 beginvalue = 2;  // 开始数值
-    uint32 endvalue = 3;    // 最终数值
+    map<string, uint32> attributes = 21;    // 属性列表
+    map<uint32, uint32> active = 22;        // 获得的主动技能
+    map<uint32, uint32> innate = 23;        // 获得的天赋技能
 }
 
 // 战斗结算数据
 message PBBalanceData
 {
-    repeated PBBalanceHero herodata = 1;            // 英雄数据
-    repeated PBBalanceItem itemdata = 2;            // 获得的道具
-    repeated PBBalanceCurrency currencydata = 3;    // 获得的货币
+    repeated PBBalanceHero herodata = 1;        // 英雄数据
+    repeated PBBalanceItem gainitem = 2;        // 获得的道具
+    repeated PBBalanceItem loseitem = 3;        // 失去的道具
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 道具结算信息
@@ -88,10 +80,11 @@ message PBBalanceHeroServer
     repeated uint64 killnpc = 11;               // 击杀npc列表
     map<string, uint32> beginattributes = 12;   // 属性列表
     map<string, uint32> endattributes = 13;     // 属性列表
-    map<uint32, uint32> character = 20;         // 获得的性格( key=新性格 value=替换的性格( 0 表示没有 ) )
-    uint32 deathreason = 21;                    // 死亡原因(参照HeroDeathReason)
+    repeated uint32 beginactive = 20;           // 初始主动技能
+    repeated uint32 endactive = 21;             // 最终主动技能
+    repeated uint32 begininnate = 22;           // 初始天赋技能
+    repeated uint32 endinnate = 23;             // 最终天赋技能
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 英雄战斗数据
 message PBFighterHeroData
@@ -108,8 +101,16 @@ message PBExplorePlayerData
     int32 y = 2;
     int32 z = 3;
     int32 yaw = 4;
-    uint32 step = 5;        // 没有计算的移动步数
-    repeated int32 fovarr = 6;     // 视野列表
+    uint32 step = 5;                // 移动步数
+    repeated int32 fovarr = 6;      // 视野列表
+}
+
+message PBNpcGroupData
+{
+    uint32 npcgroupid = 1;
+    uint32 spawnrule = 2;
+    bytes spawnmodel = 3;
+    uint32 dungeonid = 4;
 }
 
 message PBExploreNpcData
@@ -120,11 +121,15 @@ message PBExploreNpcData
     int32 z = 4;
     int32 yaw = 5;
     bool bkilled = 6;
+
+    map<uint32, PBNpcGroupData> npcgroupdata = 10;
 }
 
 message PBBuffData
 {
     uint32 id = 1;      // buff id
+    uint32 count = 2;   // 使用次数
+    uint32 level = 3;   // 等级
 }
 
 message PBBuffListData
@@ -132,34 +137,72 @@ message PBBuffListData
     repeated PBBuffData bufflist = 1;       // buff列表
 }
 
-message PBExploreBuffData
+message PBHeroBuffData
 {
-    map<uint64, PBBuffListData> buff = 1;       // <英雄uuid buff列表>
+    map<uint64, PBBuffListData> herobuff = 1;       // <英雄uuid buff列表>
+    map<uint32, PBBuffData> teambuff = 2;           // 队伍buff
 }
 
+// 探索数据
 message PBExploreData
 {
-    bool save = 1;                              // 是否是保存数据
-    uint32 random = 2;                          // 随机数
-    uint32 faith = 3;                           // 信仰值
-    PBExplorePlayerData playerdata = 4;         // 玩家数据
-	map<string, PBExploreNpcData> npcdata = 5;  // npc数据
-    PBExploreBuffData buffdata = 6;             // buff数据
+    uint32 id = 1;                              // 探索地图id
+    bool save = 2;                              // 是否是保存数据
+    uint32 random = 3;                          // 随机数
+    uint32 level = 4;                           // 秘境层数( 裂隙层的层数为10000 )
+    uint32 totallevel = 5;                      // 总共秘境层数
+    uint32 lastlevel = 6;                       // 上一层秘境
+    uint32 creation = 7;			            // 生成规则
+    uint32 innerworld = 8;			            // 里世界类型
+    uint32 birthplace = 9;                      // 出生地类型
+    uint32 innerworldparameter = 10;            // 里世界进度参数
+    PBExplorePlayerData playerdata = 11;        // 玩家数据
+	map<string, PBExploreNpcData> npcdata = 12; // npc数据
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 秘境数据
+message PBRealmData
+{
+    uint32 id = 1;                                      // 秘境id
+    uint32 level = 2;                                   // 当前秘境层数
+    bytes modulename = 3;                               // 模块名
+    uint64 moduleid = 4;                                // 模块id
+    uint32 status = 5;                                  // 探索前的状态
+    uint64 starttime = 6;                               // 开始时间
+    uint32 usetime = 7;                                 // 使用时间( 单位: 秒 )
+    uint32 faith = 8;                                   // 信仰值
+    uint32 extendlevel = 9;                             // 裂隙层层数
+    repeated PBBalanceHeroServer herodata = 10;         // 英雄数据
+    repeated PBBalanceItemServer itemdata = 11;         // 获得的道具
+    repeated PBBalanceItem loseitem = 12;               // 失去的道具
+    repeated uint64 killnpc = 13;                       // 击杀npc列表
+    PBHeroBuffData buffdata = 14;                       // buff数据
+    map<uint32, PBExploreData> explore = 15;            // 每一层探索数据
+    uint32 fleerate = 16;                               // 逃跑成功率
+    uint32 innerworld = 17;                             // 里世界标记
+    uint32 selectid = 18;                               // 选择配置
+    uint32 selectcount = 19;                            // 选择数量
+    uint32 totallevel = 20;                             // 最大层数
+    uint32 foodstep = 21;                               // 扣除粮食移动步数
+    
+    uint32 weather = 31;                                // 当前天气
+    uint32 weathertotalstep = 32;                       // 天气总时间
+    uint32 weathercurrentstep = 33;                     // 当前天气变化移动步数
+    uint32 weathertotalturn = 34;                       // 天气变化总回合数
+    uint32 weathercurrentturn = 35;                     // 天气变化总回合数
+    uint32 nextweather = 36;                            // 下个天气
+
+    uint32 timetype = 41;                               // 当前时间
+    uint32 timetotalstep = 42;                          // 当前时间总步数
+    uint32 timecurrentstep = 43;                        // 当前时间当前步数
+    uint32 timetotalturn = 44;                          // 当前时间总回合数
+    uint32 timecurrentturn = 45;                        // 当前时间当前回合数
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 战斗结算数据
-message PBBalanceDataServer
+// 逃跑惩罚数据
+message PBPunishData
 {
-    uint32 id = 1;                                      // 探索地图id
-    bytes modulename = 2;                               // 模块名
-    uint64 moduleid = 3;                                // 模块id
-    uint32 status = 4;                                  // 探索前的状态
-    uint64 starttime = 5;                               // 开始时间
-    uint32 usetime = 6;                                 // 使用时间( 单位: 秒 )
-    repeated PBBalanceHeroServer herodata = 7;          // 英雄数据
-    repeated PBBalanceItemServer itemdata = 8;          // 获得的道具等
-    repeated PBBalanceCurrency currencydata = 9;        // 获得的金币等
-    repeated uint64 killnpc = 10;                       // 击杀npc列表
-    PBExploreData exploredata = 99;                     // 探索数据(客户端)
+    bytes name = 1;     // 类型
+    uint32 id  = 2;     // id
+    uint32 value = 3;   // 数值
 }
