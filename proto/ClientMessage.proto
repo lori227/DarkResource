@@ -120,6 +120,9 @@ enum ClientProtocol
 	MSG_PVE_TURN_FINISH_REQ			= 3342;	// pve战斗回合结束
 	MSG_UPDATE_TIME_ACK				= 3343;	// 更新探索时间
 	MSG_UDPATE_WEATHER_ACK			= 3344;	// 更新探索天气
+	MSG_UPDATE_TIME_REQ				= 3345; // 请求探索时间	
+	MSG_UDPATE_WEATHER_REQ			= 3346;	// 请求新探索天气
+	MSG_UPDATE_EXPLORE_EVENT_REQ	= 3347;	// 更新探索事件数据
 
 	// daily
 	MSG_QUERY_RECORD_REQ			= 3351;	// 查询记录
@@ -136,10 +139,9 @@ enum ClientProtocol
 	MSG_HERO_UNWEAPON_REQ			= 3401;	// 给英雄脱武器
 	MSG_UPDATE_DURABILITY_REQ		= 3402;	// 更新武器耐久
 	MSG_HERO_WEAPON_ANOTHER_REQ		= 3403;	// 从影响身上装备武器到应该一个英雄身上
-	MSG_RUNE_PUT_ON_REQ				= 3404;	// 穿上符石
-	MSG_RUNE_TAKE_OFF_REQ			= 3405;	// 脱下符石
-	MSG_RUNE_EXCHANGE_REQ			= 3406;	// 交换符石
-	MSG_RUNE_COMPOUND_ACK			= 3407;	// 符石合成返回
+	MSG_MOVE_RUNE_REQ				= 3404;	// 移动符石
+	MSG_RUNE_COMPOUND_ACK			= 3405;	// 符石合成返回
+	MSG_GET_NEW_RUNE_ACK			= 3406;	// 获得新符石返回
 
 	// dialogue
 	MSG_START_DIALOGUE_ACK 			= 3431;	// 开始对话返回
@@ -446,6 +448,7 @@ message MsgRealmEnterAck
 	uint32 realmid = 3;				// 秘境id
     PBHeroBuffData buffdata = 4;    // buff数据
 	uint32 worldflag = 5;			// 里世界标记
+	map<string, string> eventdata = 6;		// 事件数据
 }
 
 // 退出秘境
@@ -573,6 +576,13 @@ message MsgUpdateExploreNpcReq
 message MsgUpdateExploreBuffAck
 {
     PBHeroBuffData buffdata = 1;    // buff数据
+}
+
+// 更新探索事件数据
+// MSG_UPDATE_EXPLORE_EVENT_REQ
+message MsgUpdateExploreEventReq
+{
+    map<string, string> eventdata = 1;	// 事件数据
 }
 
 // 探索掉落请求
@@ -745,34 +755,28 @@ message MsgUpdateDurabilityReq
 	uint32 durability = 3;		// 耐久值
 }
 
-// 穿上符石
-// MSG_RUNE_PUT_ON_REQ
-message MsgRunePutOnReq
+// 移动符石
+// MSG_MOVE_RUNE_REQ
+message MsgMoveRuneReq
 {
-	uint32 index = 1;		// 符石槽索引(为0时自动寻找)
-	uint64 itemuuid = 2;	// 道具uuid
-}
-
-// 脱下符石
-// MSG_RUNE_TAKE_OFF_REQ
-message MsgRuneTakeOffReq
-{
-	uint32 index = 1;		// 符石槽索引
-}
-
-// 交换符石
-// MSG_RUNE_EXCHANGE_REQ
-message MsgRuneExchangeReq
-{
-	uint32 oldindex = 1;	// 索引1
-	uint32 newindex = 2;	// 索引2
+	bytes sourcename = 1;	// 源背包名字
+	uint64 sourceuuid = 2;	// 道具uuid
+	bytes targetname = 3;	// 目标背包名字
+	uint32 targetindex = 4;	// 目标背包位置( 0 表示服务器自己找空位置 )
 }
 
 // 符石合成返回
 // MSG_RUNE_COMPOUND_ACK
 message MsgRuneCompoundAck
 {
-	repeated uint32 compoundlist = 1;	// 合成符石列表
+	map<uint32, uint32> compoundlist = 1;	// 合成符石列表<id num>
+}
+
+// 获得新符石返回
+// MSG_GET_NEW_RUNE_ACK
+message MsgGetNewRuneAck
+{
+	map<uint32, uint32> runelist = 1;	// 获得新符石列表<id ->
 }
 
 
@@ -864,7 +868,7 @@ message MsgGambleItemFinishAck
 	uint32 gamblecount = 2;			// 摇奖次数
 	uint32 costitemid = 3;			// 花费道具id
 	uint32 costitemcount = 4; 		// 花费道具数量
-	repeated uint32 showitemid = 5;	// 显示的道具列表(数组)
+	map<uint32, uint32> showitemid = 5;	// 显示的道具列表(数组)
 	uint32 showindex = 6;			// 最终获得的道具索引
 }
 
@@ -1006,12 +1010,25 @@ message MsgPVETurnFinsihReq
 }
 
 // 更新时间
+// MSG_UPDATE_TIME_REQ
+message MsgUpdateTimeReq
+{
+}
+
+// 更新时间
 // MSG_UPDATE_TIME_ACK
 message MsgUpdateTimeAck
 {
 	uint32 timetype = 1;		// 时间类型
 	uint32 realmduration = 2;	// 秘境持续时间, 不需要可以无视( 在探索中是移动步数, 在战斗中是回合数 )
 	uint32 pveduration = 3;		// pve持续时间, 不需要可以无视( 在探索中是移动步数, 在战斗中是回合数 )
+}
+
+// 更新天气
+// MSG_UDPATE_WEATHER_REQ
+message MsgUpdateWeatherReq
+{
+
 }
 
 // 更新天气

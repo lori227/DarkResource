@@ -7,6 +7,7 @@ enum ConstDefineEnum
 	UnknowConse = 0;
 	InfiniteStep = 99999;		// 无限移动步数
 	InfiniteTurn = 99999;		// 无限回合数
+	InfiniteBuff = 10000;		// 无限buff次数
 }
 //////////////////////////////////////////////////////////////////////////////////
 enum CampEnum

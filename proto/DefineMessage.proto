@@ -184,6 +184,9 @@ message PBRealmData
     uint32 selectcount = 19;                            // 选择数量
     uint32 totallevel = 20;                             // 最大层数
     uint32 foodstep = 21;                               // 扣除粮食移动步数
+    map<uint64, uint32> townhero = 22;                  // 回城英雄记录<英雄uuid 层数>
+    map<uint32, uint32> runedata = 23;                  // 符石列表记录<符石id ->
+    map<string, string> eventdata = 24;                 // 事件数据
     
     uint32 weather = 31;                                // 当前天气
     uint32 weathertotalstep = 32;                       // 天气总时间
