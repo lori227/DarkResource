@@ -4,10 +4,14 @@ package KFMsg;
 enum ConstDefineEnum
 {
 	option allow_alias = true;
-	UnknowConse = 0;
+	UnknowConst = 0;
 	InfiniteStep = 99999;		// 无限移动步数
 	InfiniteTurn = 99999;		// 无限回合数
 	InfiniteBuff = 10000;		// 无限buff次数
+
+	// 任务区域类型
+	AreaCamp = 1;				// 营地任务
+	AreaRealm = 2;				// 秘境任务
 }
 //////////////////////////////////////////////////////////////////////////////////
 enum CampEnum
@@ -98,7 +102,10 @@ enum PlayerStatusEnumEx
 	ExploreStatus = 3;		// 探索
 	PVEStatus = 4;			// PVE
 	PVPStatus = 5;			// PVP
-	DropSelectStatus = 6;	// 掉落选择
+	TownStatus = 6;			// 回城状态
+
+
+	DropSelectStatus = 100;	// 掉落选择
 }
 //////////////////////////////////////////////////////////////////////////////////
 // 小红点

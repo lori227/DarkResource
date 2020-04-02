@@ -61,8 +61,9 @@ message PBBalanceItemServer
 {
     uint32 id = 1;              // 道具id
     uint64 uuid = 2;            // uuid
-    uint32 begincount = 3;      // 起始数值
-    uint32 endcount = 4;        // 最终数值
+    uint32 begincount = 3;      // 起始数量
+    uint32 endcount = 4;        // 最终数量
+    uint32 usecount = 5;        // 消耗数量
 }
 
 message PBBalanceHeroServer
