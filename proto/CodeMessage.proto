@@ -108,6 +108,7 @@ enum ProjectCodeEnum
 	GranaryBuyCountLimit		= 31238;	// 购买粮食次数不足
 	GranaryBuySettingError		= 31239;	// 购买粮食配置错误
 	GranaryBuyParamError		= 31240;	// 购买粮食参数错误
+	BuildCanNotUpgrade			= 31241;	// 建筑不可升级
 
 	// realm
 	RealmMapError				= 31301;	// 探索地图错误
@@ -161,14 +162,10 @@ enum ProjectCodeEnum
 	ItemUnWeaponOk				= 32508;	// 卸下装备成功
 	ItemUpdateDurabilityError	= 32509;	// 更新耐久操作类型错误
 	ItemCanNotUseToHero			= 32510;	// 该物品不能对英雄使用
-	RuneIsNotAutoSet			= 32511;	// 符石不是自动装备
-	RuneSlotIsFull				= 32512;	// 符石槽已满
-	RuneSlotIndexError			= 32513;	// 符石槽位置错误
+
 	RuneSameTypeLimit			= 32514;	// 已装备同类型符石
 	RunePutOnSuc				= 32515;	// 符石穿上成功
 	RuneTakeOffSuc				= 32516;	// 符石脱下成功
-	RuneTakeOffFail				= 32517;	// 符石脱下失败
-	RuneSlotIsEmpty				= 32518;	// 当前符石槽为空
 
 	// attribute-extra
 	PlayerHeadIconSetOK			= 32601;	// 玩家头像设置成功
@@ -191,4 +188,8 @@ enum ProjectCodeEnum
 	DialogueBranchSelectSuc		= 32710;	// 对话分支选择成功
 	StoryHaveDialogueBranch		= 32711;	// 剧情对话有分支，不能完成
 	StorySequenceNotFinish		= 32712;	// 当前剧情序列没有完成
+
+
+	// task
+	TaskChainSettingNotExist 	= 32800;	// 任务链(%s)配置不存在
 }

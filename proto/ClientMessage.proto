@@ -143,13 +143,13 @@ enum ClientProtocol
 	MSG_RUNE_COMPOUND_ACK			= 3405;	// 符石合成返回
 	MSG_GET_NEW_RUNE_ACK			= 3406;	// 获得新符石返回
 
-	// dialogue
+	// story
 	MSG_START_DIALOGUE_ACK 			= 3431;	// 开始对话返回
 	MSG_UPDATE_DIALOGUE_REQ 		= 3432;	// 更新对话序列
 	MSG_START_STORY_REQ				= 3433;	// 开始剧情请求
 	MSG_UPDATE_STORY_REQ			= 3434;	// 更新剧情请求
 	MSG_SELECT_DIALOGUE_BRANCH_REQ	= 3435;	// 选择对话分支
-	
+	MSG_ADD_STORY_ACK				= 3436;	// 添加剧情数据
 
 	// attribute-extra
 	MSG_SET_PLAYER_HEADICON_REQ 	= 3451;	// 设置玩家头像
@@ -443,12 +443,14 @@ message MsgRealmExtendReq
 // MSG_REALM_ENTER_ACK	
 message MsgRealmEnterAck
 {
-	PBExploreData exploredata = 1;	// 探索数据
-	uint32 faith = 2;               // 信仰值
-	uint32 realmid = 3;				// 秘境id
-    PBHeroBuffData buffdata = 4;    // buff数据
-	uint32 worldflag = 5;			// 里世界标记
+	PBExploreData exploredata = 1;			// 探索数据
+	uint32 faith = 2;               		// 信仰值
+	uint32 realmid = 3;						// 秘境id
+    PBHeroBuffData buffdata = 4;    		// buff数据
+	uint32 worldflag = 5;					// 里世界标记
 	map<string, string> eventdata = 6;		// 事件数据
+	uint32 foodstep = 7;					// 没有计算的粮食步数
+	uint32 entertype = 8;					// 进入类型
 }
 
 // 退出秘境
@@ -821,6 +823,14 @@ message MsgSelectDialogueBranchReq
 	uint32 branchid = 2;		// 分支id
 }
 
+// 添加剧情数据
+// MSG_ADD_STORY_ACK
+message MsgAddStoryAck
+{
+	uint32 storyid = 1;			// 剧情id
+	uint64 moduleid = 2;		// 模块id
+	bytes modulename = 3;		// 模块名
+}
 
 // 设置玩家头像
 // MSG_SET_PLAYER_HEADICON_REQ
