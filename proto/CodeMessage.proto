@@ -46,8 +46,7 @@ enum ProjectCodeEnum
 	HeroCanNotTransfer			= 31126;	// 当前职业不能转职
 	HeroProfessionIsError		= 31127;	// 英雄职业数据错误
 	HeroNameEmpty				= 31128;	// 英雄名字为空
-	HeroTransferSuc				= 31129;	// 英雄转职成功
-	HeroSelectInnateSuc			= 31130;	// 英雄选择天赋成功
+
 	HeroIsDead					= 31131;	// 英雄已死亡
 	HeroRaceIsError				= 31132;	// 英雄种族数据错误
 	HeroDivisorNotUnlock		= 31133;	// 偏好因子未解锁
@@ -56,7 +55,7 @@ enum ProjectCodeEnum
 	HeroRecruitRefreshWeight    = 31136;	// 招募英雄刷新权重错误, 是否科技解锁错误
 	HeroRefreshCountNotEnough   = 31137;	// 刷新数量不够
 	HeroRecruitRefreshSuc		= 31138;	// 招募刷新成功
-	HeroRecruitHeroSuc			= 31139;	// 招募英雄成功
+
 	HeroDurabilityNotZero		= 31140;	// 英雄耐久度不为0
 	ContractTimeFormulaError	= 31141;	// 签约时间公式错误
 	ContractPriceFormulaError	= 31142;	// 签约价格公式错误
@@ -90,7 +89,7 @@ enum ProjectCodeEnum
 	SmithyMakeNumNotEnough		= 31220;	// 打造材料不足
 	ClinicCountIsNotEnough		= 31221;	// 医疗所栏位不足
 	ClinicNotNeedCure			= 31222;	// 不需要治疗
-	SmithyMakeWeaponSuc			= 31223;	// 铁匠铺打造武器成功
+
 	BuildLevelIsMax				= 31224;	// 建筑等级已满
 	BuildInUpgradeTime			= 31225;	// 建筑正在升级
 	BuildNoFreeUpgradeList		= 31226;	// 没有空闲的升级队列
@@ -188,6 +187,7 @@ enum ProjectCodeEnum
 	DialogueBranchSelectSuc		= 32710;	// 对话分支选择成功
 	StoryHaveDialogueBranch		= 32711;	// 剧情对话有分支，不能完成
 	StorySequenceNotFinish		= 32712;	// 当前剧情序列没有完成
+	StoryIsNotMainStory			= 32713;	// 当前没有正在执行的剧情
 
 
 	// task

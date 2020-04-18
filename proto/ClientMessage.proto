@@ -150,6 +150,7 @@ enum ClientProtocol
 	MSG_UPDATE_STORY_REQ			= 3434;	// 更新剧情请求
 	MSG_SELECT_DIALOGUE_BRANCH_REQ	= 3435;	// 选择对话分支
 	MSG_ADD_STORY_ACK				= 3436;	// 添加剧情数据
+	MSG_EXECUTE_STORY_REQ			= 3437;	// 执行故事请求
 
 	// attribute-extra
 	MSG_SET_PLAYER_HEADICON_REQ 	= 3451;	// 设置玩家头像
@@ -831,6 +832,13 @@ message MsgAddStoryAck
 	uint64 moduleid = 2;		// 模块id
 	bytes modulename = 3;		// 模块名
 }
+
+// 开始执行故事请求
+// MSG_EXECUTE_STORY_REQ
+message MsgExecuteStoryReq
+{
+}
+
 
 // 设置玩家头像
 // MSG_SET_PLAYER_HEADICON_REQ

@@ -78,7 +78,6 @@ message PBBalanceHeroServer
     uint32 beginlevel = 8;                      // 起始等级
     uint32 endlevel = 9;                        // 最终等级
     bool death = 10;                            // 是否死亡
-    repeated uint64 killnpc = 11;               // 击杀npc列表
     map<string, uint32> beginattributes = 12;   // 属性列表
     map<string, uint32> endattributes = 13;     // 属性列表
     repeated uint32 beginactive = 20;           // 初始主动技能
@@ -176,7 +175,6 @@ message PBRealmData
     repeated PBBalanceHeroServer herodata = 10;         // 英雄数据
     repeated PBBalanceItemServer itemdata = 11;         // 获得的道具
     repeated PBBalanceItem loseitem = 12;               // 失去的道具
-    repeated uint64 killnpc = 13;                       // 击杀npc列表
     PBHeroBuffData buffdata = 14;                       // buff数据
     map<uint32, PBExploreData> explore = 15;            // 每一层探索数据
     uint32 fleerate = 16;                               // 逃跑成功率
