@@ -42,10 +42,13 @@ message PBBalanceHero
     bytes name = 5;                         // 名字
     uint32 exp = 6;                         // 获得的经验
     uint32 level = 7;                       // 总升级数
-    bool death  = 8;                        // 是否死亡
+    bool death = 8;                         // 是否死亡
+    uint32 quality = 9;                     // 品质
+    uint32 maxhp = 10;                      // 最大血量
     map<string, uint32> attributes = 21;    // 属性列表
     map<uint32, uint32> active = 22;        // 获得的主动技能
     map<uint32, uint32> innate = 23;        // 获得的天赋技能
+    map<uint32, uint32> injury = 24;        // 获得的伤病
 }
 
 // 战斗结算数据
@@ -78,12 +81,16 @@ message PBBalanceHeroServer
     uint32 beginlevel = 8;                      // 起始等级
     uint32 endlevel = 9;                        // 最终等级
     bool death = 10;                            // 是否死亡
-    map<string, uint32> beginattributes = 12;   // 属性列表
-    map<string, uint32> endattributes = 13;     // 属性列表
+    uint32 quality = 11;                        // 品质
+    uint32 maxhp = 12;                          // 最大血量
+    map<string, uint32> beginattributes = 13;   // 属性列表
+    map<string, uint32> endattributes = 14;     // 属性列表
     repeated uint32 beginactive = 20;           // 初始主动技能
     repeated uint32 endactive = 21;             // 最终主动技能
     repeated uint32 begininnate = 22;           // 初始天赋技能
     repeated uint32 endinnate = 23;             // 最终天赋技能
+    map<uint32, uint32> begininjury = 24;       // 初始伤病
+    map<uint32, uint32> endinjury = 25;         // 最终伤病
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 英雄战斗数据

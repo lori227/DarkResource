@@ -806,6 +806,7 @@ message MsgUpdateDialogueReq
 message MsgUpdateStoryReq
 {
 	uint32 storyid = 1;			// 剧情id
+	uint32 sequence = 2;		// 增加序列
 }
 
 // 开始剧情请求
