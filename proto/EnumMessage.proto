@@ -152,6 +152,7 @@ enum InitialProcessEnum
 	ProcessSequence = 9;	// 过场
 	ChapterAndStory = 10;	// 章节点和剧情
 	ProcessStory = 11;		// 剧情
+	CreateRole = 12;		// 创角
 }
 //////////////////////////////////////////////////////////////////////////////////
 enum RealmEnterEnum
