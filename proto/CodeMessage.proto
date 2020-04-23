@@ -108,6 +108,7 @@ enum ProjectCodeEnum
 	GranaryBuySettingError		= 31239;	// 购买粮食配置错误
 	GranaryBuyParamError		= 31240;	// 购买粮食参数错误
 	BuildCanNotUpgrade			= 31241;	// 建筑不可升级
+	GranaryFootMaxCountLimit	= 31242;	// 仓库中粮食存储已满，无法获得
 
 	// realm
 	RealmMapError				= 31301;	// 探索地图错误

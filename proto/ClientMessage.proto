@@ -152,9 +152,10 @@ enum ClientProtocol
 	MSG_ADD_STORY_ACK				= 3436;	// 添加剧情数据
 	MSG_EXECUTE_STORY_REQ			= 3437;	// 执行故事请求
 
-	// attribute-extra
+	// role
 	MSG_SET_PLAYER_HEADICON_REQ 	= 3451;	// 设置玩家头像
 	MSG_SET_PLAYER_FACTION_REQ 		= 3452;	// 设置玩家势力
+	MSG_POSITION_UPDATE_REQ			= 3453;	// 更新位置信息
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -530,7 +531,7 @@ message MsgNpcGroupDataAck
 // MSG_LOGIC_EVENT_ACK
 message MsgLogicEventAck
 {
-	uint32 id = 1;			// 事件id
+	repeated uint32 id = 1;			// 事件id
 }
 
 // 战斗结算请求
@@ -948,8 +949,8 @@ message MsgMultiEventReq
 // MSG_MULTI_EVENT_ACK
 message MsgMultiEventAck
 {
-	uint32 multieventid = 1;	// 配置id
-	uint32 eventid = 2;			// 执行的事件id
+	uint32 multieventid = 1;		// 配置id
+	repeated uint32 eventid = 2;	// 执行的事件id
 }
 
 // 添加buff
@@ -1060,4 +1061,11 @@ message MsgUpdateWeatherAck
 	uint32 realmcurrentduration = 4;	// 秘境当前持续时间
 	uint32 pvetotalduration = 5;		// pve总持续时间, 不需要可以无视( 在探索中是移动步数, 在战斗中是回合数 )
 	uint32 pvecurrentduration = 6;		// pve当前持续时间( 0表是没有 )
+}
+
+// 更新位置信息
+// MSG_POSITION_UPDATE_REQ
+message MsgPositionUpdateReq
+{
+	bytes position = 1;	// 位置信息
 }
