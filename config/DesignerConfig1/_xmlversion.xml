@@ -1,14 +1,10 @@
-<root version="3010">
-	<item name="itemtab" version="1147" />
+<root version="4677">
 	<item name="buildcondition" version="1147" />
 	<item name="herochancel" version="1147" />
 	<item name="herochanceltab" version="1147" />
 	<item name="heroname" version="1147" />
-	<item name="heropinchface" version="1147" />
-	<item name="herobackground" version="1147" />
 	<item name="role_life" version="1147" />
 	<item name="refrainrelation" version="1147" />
-	<item name="refrainfactor" version="1147" />
 	<item name="channel" version="1147" />
 	<item name="route" version="1147" />
 	<item name="match" version="1147" />
@@ -19,106 +15,118 @@
 	<item name="shopgoods" version="1147" />
 	<item name="leave" version="1147" />
 	<item name="enter" version="1147" />
-	<item name="RenderCaptureCfg" version="1147" />
 	<item name="traincamp" version="1206" />
 	<item name="itemweightpool" version="1251" />
 	<item name="affixtext" version="1251" />
 	<item name="recruitdivisor" version="1545" />
 	<item name="npcskill" version="1545" />
 	<item name="explorerecord" version="1545" />
-	<item name="battletipstype" version="1545" />
-	<item name="recruitrefresh" version="1670" />
 	<item name="goodsweightpool" version="1670" />
 	<item name="weaponaffix" version="1702" />
 	<item name="camp" version="1702" />
-	<item name="itemgift" version="1747" />
 	<item name="headportrait" version="1747" />
 	<item name="element" version="1757" />
 	<item name="smithy" version="1942" />
 	<item name="maincamp_camera" version="2029" />
-	<item name="granary" version="2029" />
-	<item name="herocharacter" version="2029" />
-	<item name="heroskill" version="2029" />
 	<item name="filter" version="2057" />
 	<item name="foodconsume" version="2201" />
 	<item name="smithyweapon" version="2449" />
-	<item name="meshconfig" version="2449" />
-	<item name="reward" version="2591" />
 	<item name="explore" version="2643" />
-	<item name="npc" version="2850" />
-	<item name="herolevel" version="2850" />
-	<item name="granarybuy" version="2850" />
-	<item name="rolebasetext" version="2850" />
-	<item name="herogenerate" version="2850" />
-	<item name="minimap" version="2850" />
 	<item name="train" version="2850" />
-	<item name="unlock" version="2850" />
-	<item name="herorace" version="2850" />
-	<item name="camptext" version="2850" />
-	<item name="heroattribute" version="2850" />
 	<item name="faction" version="2850" />
-	<item name="leader" version="2850" />
-	<item name="itemtext" version="2850" />
-	<item name="task" version="2850" />
 	<item name="leaderskill" version="2850" />
-	<item name="sequence" version="2850" />
-	<item name="heroweightpool" version="2850" />
-	<item name="tasktext" version="2850" />
 	<item name="compoundrune" version="2916" />
-	<item name="clinic" version="2916" />
-	<item name="buildskin" version="2916" />
-	<item name="currency" version="2916" />
-	<item name="chapter" version="2916" />
-	<item name="time" version="2916" />
-	<item name="reset" version="2916" />
-	<item name="weapontype" version="2916" />
-	<item name="unlockcondition" version="2916" />
-	<item name="tlog" version="2916" />
-	<item name="icon" version="2916" />
-	<item name="itemrune" version="2916" />
-	<item name="buildbasics" version="2916" />
-	<item name="taskcondition" version="2916" />
-	<item name="initialprocess" version="2916" />
-	<item name="taskchain" version="2916" />
-	<item name="gmcommand" version="2916" />
-	<item name="taskchainrefresh" version="2916" />
-	<item name="npcgroup" version="2916" />
-	<item name="itemdrug" version="2946" />
-	<item name="appearance" version="2946" />
-	<item name="player" version="2946" />
-	<item name="punish" version="2946" />
-	<item name="prompttext" version="2946" />
-	<item name="itemtype" version="2960" />
-	<item name="status" version="2960" />
-	<item name="story" version="2960" />
-	<item name="itemcommon" version="2960" />
-	<item name="innerworld" version="2960" />
-	<item name="worldmaptext" version="2960" />
-	<item name="gamble" version="2984" />
-	<item name="dropgroup" version="2984" />
-	<item name="npcgenerate" version="2984" />
-	<item name="herotransfer" version="2984" />
-	<item name="option" version="2984" />
-	<item name="exchange" version="2984" />
-	<item name="uitext" version="2984" />
-	<item name="itemweapon" version="2984" />
-	<item name="tipstext" version="2989" />
-	<item name="select" version="2989" />
-	<item name="class" version="2989" />
-	<item name="technology" version="3010" />
-	<item name="dropdata" version="3010" />
-	<item name="multievent" version="3010" />
-	<item name="heroment" version="3010" />
-	<item name="dialogue" version="3010" />
-	<item name="dialoguetext" version="3010" />
-	<item name="dialoguebranch" version="3010" />
-	<item name="buildlevel" version="3010" />
-	<item name="pve" version="3010" />
-	<item name="realm" version="3010" />
-	<item name="levelvalue" version="3010" />
-	<item name="conditiondefine" version="3010" />
-	<item name="config" version="3010" />
-	<item name="heroprofession" version="3010" />
-	<item name="formula" version="3010" />
-	<item name="itemment" version="3010" />
+	<item name="granary" version="3063" />
+	<item name="sequence" version="3063" />
+	<item name="jumpaddress" version="3116" />
+	<item name="RenderCaptureCfg" version="3591" />
+	<item name="option" version="3591" />
+	<item name="heroment" version="3591" />
+	<item name="leader" version="3591" />
+	<item name="itemment" version="3591" />
+	<item name="reward" version="3697" />
+	<item name="executesort" version="4318" />
+	<item name="npc" version="4677" />
+	<item name="herolevel" version="4677" />
+	<item name="appearance" version="4677" />
+	<item name="technology" version="4677" />
+	<item name="player" version="4677" />
+	<item name="clinic" version="4677" />
+	<item name="tipstext" version="4677" />
+	<item name="itembag" version="4677" />
+	<item name="granarybuy" version="4677" />
+	<item name="multievent" version="4677" />
+	<item name="dialogue" version="4677" />
+	<item name="rolebasetext" version="4677" />
+	<item name="buildskin" version="4677" />
+	<item name="herogenerate" version="4677" />
+	<item name="minimap" version="4677" />
+	<item name="dialoguebranch" version="4677" />
+	<item name="story" version="4677" />
+	<item name="time" version="4677" />
+	<item name="prompttext" version="4677" />
+	<item name="itemtab" version="4677" />
+	<item name="realm" version="4677" />
+	<item name="conditiondefine" version="4677" />
+	<item name="config" version="4677" />
+	<item name="reset" version="4677" />
+	<item name="exchange" version="4677" />
+	<item name="unlock" version="4677" />
+	<item name="status" version="4677" />
+	<item name="select" version="4677" />
+	<item name="class" version="4677" />
+	<item name="herorace" version="4677" />
+	<item name="herobackground" version="4677" />
+	<item name="taskcondition" version="4677" />
+	<item name="battletipstype" version="4677" />
+	<item name="initialprocess" version="4677" />
+	<item name="itemconstant" version="4677" />
+	<item name="taskchain" version="4677" />
+	<item name="itemcommon" version="4677" />
+	<item name="levelvalue" version="4677" />
+	<item name="herocharacter" version="4677" />
+	<item name="taskexecute" version="4677" />
+	<item name="innerworld" version="4677" />
+	<item name="camptext" version="4677" />
+	<item name="itemdrug" version="4677" />
+	<item name="gamble" version="4677" />
+	<item name="heroattribute" version="4677" />
+	<item name="currency" version="4677" />
+	<item name="dialoguetext" version="4677" />
+	<item name="meshconfig" version="4677" />
+	<item name="chapter" version="4677" />
+	<item name="pve" version="4677" />
+	<item name="npcrand" version="4677" />
+	<item name="herotransfer" version="4677" />
+	<item name="heroprofession" version="4677" />
+	<item name="recruitrefresh" version="4677" />
+	<item name="itemtext" version="4677" />
+	<item name="weapontype" version="4677" />
+	<item name="worldmaptext" version="4677" />
+	<item name="unlockcondition" version="4677" />
+	<item name="uitext" version="4677" />
+	<item name="tlog" version="4677" />
+	<item name="refrainfactor" version="4677" />
+	<item name="heroconstant" version="4677" />
+	<item name="itemtype" version="4677" />
+	<item name="icon" version="4677" />
+	<item name="itemrune" version="4677" />
+	<item name="constant" version="4677" />
+	<item name="task" version="4677" />
+	<item name="dropdata" version="4677" />
+	<item name="buildbasics" version="4677" />
+	<item name="punish" version="4677" />
+	<item name="heropinchface" version="4677" />
+	<item name="buildlevel" version="4677" />
+	<item name="dropgroup" version="4677" />
+	<item name="gmcommand" version="4677" />
+	<item name="npcgenerate" version="4677" />
+	<item name="heroweightpool" version="4677" />
+	<item name="itemgift" version="4677" />
+	<item name="taskchainrefresh" version="4677" />
+	<item name="npcgroup" version="4677" />
+	<item name="heroskill" version="4677" />
+	<item name="formula" version="4677" />
+	<item name="itemweapon" version="4677" />
+	<item name="tasktext" version="4677" />
 </root>

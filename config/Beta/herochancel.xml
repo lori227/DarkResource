@@ -1,4 +1,4 @@
-<root version="2406">
+<root version="335">
 	<item Id="160101" Type="1601" Stage="1" Condition="[[1601,1]]" />
 	<item Id="160102" Type="1601" Stage="2" Condition="[[1601,2]]" />
 	<item Id="160103" Type="1601" Stage="3" Condition="[[1601,3]]" />

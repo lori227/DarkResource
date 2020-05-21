@@ -46,7 +46,8 @@ enum ProjectCodeEnum
 	HeroCanNotTransfer			= 31126;	// 当前职业不能转职
 	HeroProfessionIsError		= 31127;	// 英雄职业数据错误
 	HeroNameEmpty				= 31128;	// 英雄名字为空
-
+	HeroSelectInnateNumError	= 31129;	// 选择天赋数量错误
+	HeroSelectInnateIdError		= 31130;	// 选择天赋id错误
 	HeroIsDead					= 31131;	// 英雄已死亡
 	HeroRaceIsError				= 31132;	// 英雄种族数据错误
 	HeroDivisorNotUnlock		= 31133;	// 偏好因子未解锁

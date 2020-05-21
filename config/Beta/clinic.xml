@@ -1,4 +1,4 @@
-<root platform="" version="2898">
+<root version="1559">
 	<item Id="1" Item="1900003" MaxNum="5000" CdTime="60" AddNum="10" ConsumeNum="10" AddHp="1" Count="4" Money="[{&quot;money&quot;:&quot;200&quot;}]" FormulaId="3" />
 	<item Id="2" Item="1900003" MaxNum="5000" CdTime="60" AddNum="10" ConsumeNum="10" AddHp="1" Count="4" Money="[{&quot;money&quot;:&quot;200&quot;}]" FormulaId="3" />
 	<item Id="3" Item="1900003" MaxNum="5000" CdTime="60" AddNum="10" ConsumeNum="10" AddHp="1" Count="4" Money="[{&quot;money&quot;:&quot;200&quot;}]" FormulaId="3" />

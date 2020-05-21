@@ -188,6 +188,7 @@ enum JumpEnum
 	JumpInvalid = 0;	// 无效
 	Leave = 1;			// 离开
 	Enter = 2;			// 进入
+	Finish = 3;			// 完成
 }
 //////////////////////////////////////////////////////////////////////////////////
 enum RealmTimeEnum
@@ -197,4 +198,19 @@ enum RealmTimeEnum
 	Morning = 1;		// 上午
 	Afternoon = 2;		// 下午
 	Night = 3;			// 晚上
+}
+
+// 功能解锁
+enum FunctionEnum
+{
+	FunctionInvalid = 0;	// 无效
+
+	OnekeyEquip = 1;		// 一键装备
+
+	DarkCorner = 101;		// 暗角显示	
+	NecklaceEmbryo = 102;	// 项链胚胎
+	ProgressText = 103;		// 进度文本
+	DescButton = 104;		// 说明按钮
+	
+	
 }

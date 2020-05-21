@@ -1,0 +1,28 @@
+<root platform="" version="4865">
+	<item Name="playernamelength" Key="" Value="15" Channel="0" Service="0" />
+	<item Name="recruitrefreshtime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="recruittime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="transfertime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="trainingfasttime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="trainingempty" Key="" Value="0" Channel="0" Service="0" />
+	<item Name="battlesecondconfirmationtime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="carryfoodshortage" Key="" Value="10" Channel="0" Service="0" />
+	<item Name="foodshortageinexplore" Key="" Value="10" Channel="0" Service="0" />
+	<item Name="signinresettime" Key="" Value="1" Channel="0" Service="0" />
+	<item Name="dailyresettime" Key="" Value="1" Channel="0" Service="0" />
+	<item Name="taskpickuptime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="builduplevel" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="recruitmentfixedtime" Key="" Value="0" Channel="0" Service="0" />
+	<item Name="playerfirstfight" Key="" Value="11001" Channel="0" Service="0" />
+	<item Name="enterfaith" Key="" Value="100" Channel="0" Service="0" />
+	<item Name="leavefaith" Key="" Value="0" Channel="0" Service="0" />
+	<item Name="granarybuytime" Key="" Value="0" Channel="0" Service="0" />
+	<item Name="renewcontracttime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="shoprefreshtime" Key="" Value="0.4" Channel="0" Service="0" />
+	<item Name="worldmapmodelloc" Key="" Value="-2180,4930,73" Channel="0" Service="0" />
+	<item Name="worldmapmodelrot" Key="" Value="150" Channel="0" Service="0" />
+	<item Name="worldmapmodelspeed" Key="" Value="1500" Channel="0" Service="0" />
+	<item Name="worldmapmodelrange" Key="" Value="300" Channel="0" Service="0" />
+	<item Name="worldmapmodelscale" Key="" Value="3" Channel="0" Service="0" />
+	<item Name="worldmapcameraspeed" Key="" Value="7500" Channel="0" Service="0" />
+</root>

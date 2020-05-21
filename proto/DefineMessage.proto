@@ -165,6 +165,7 @@ message PBExploreData
     uint32 innerworldparameter = 10;            // 里世界进度参数
     PBExplorePlayerData playerdata = 11;        // 玩家数据
 	map<string, PBExploreNpcData> npcdata = 12; // npc数据
+    int32 camera = 13;                         // 摄像机角度
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 秘境数据

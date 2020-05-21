@@ -123,6 +123,9 @@ enum ClientProtocol
 	MSG_UPDATE_TIME_REQ				= 3345; // 请求探索时间	
 	MSG_UDPATE_WEATHER_REQ			= 3346;	// 请求新探索天气
 	MSG_UPDATE_EXPLORE_EVENT_REQ	= 3347;	// 更新探索事件数据
+	MSG_REALM_LEVEL_FINISH_REQ		= 3348;	// 秘境某一次探索完成
+	MSG_REALM_LEVEL_FINISH_ACK		= 3349;	// 秘境某一次探索完成
+	MSG_UPDATE_REALM_CAMERA_REQ		= 3350;	// 更新秘境摄像机角度
 
 	// daily
 	MSG_QUERY_RECORD_REQ			= 3351;	// 查询记录
@@ -469,6 +472,32 @@ message MsgRealmTownReq
 
 }
 
+// 探索某一层完成
+// MSG_REALM_LEVEL_FINISH_REQ
+message MsgRealmLevelFinishReq
+{
+	uint32 realmid = 1;
+	uint32 nextlevel = 2;
+	uint32 birthplace = 3;
+}
+
+// 探索某一层完成
+// MSG_REALM_LEVEL_FINISH_ACK
+message MsgRealmLevelFinishAck
+{
+	uint32 realmid = 1;
+	uint32 nextlevel = 2;
+	uint32 birthplace = 3;
+}
+
+// 更新秘境摄像机角度
+// MSG_UPDATE_REALM_CAMERA_REQ
+message MsgUpdateRealmCameraReq
+{
+	int32 camera = 1;
+}
+
+
 // 探索结算请求
 // MSG_REALM_BALANCE_REQ
 message MsgRealmBalanceReq
@@ -531,7 +560,7 @@ message MsgNpcGroupDataAck
 // MSG_LOGIC_EVENT_ACK
 message MsgLogicEventAck
 {
-	repeated uint32 id = 1;			// 事件id
+	map<uint32, uint32> id = 1;			// 事件id
 }
 
 // 战斗结算请求
@@ -690,7 +719,7 @@ message MsgTransferProReq
 message MsgSelectInnateReq
 {
 	uint64 uuid = 1;			// 英雄id
-	repeated uint32 innate = 2;	// 删除天赋id列表
+	repeated uint32 innate = 2;	// 选择天赋id列表
 }
 
 ////////////////////////////////////////////////////
@@ -950,7 +979,7 @@ message MsgMultiEventReq
 message MsgMultiEventAck
 {
 	uint32 multieventid = 1;		// 配置id
-	repeated uint32 eventid = 2;	// 执行的事件id
+	map<uint32,uint32> eventid = 2;	// 执行的事件id
 }
 
 // 添加buff

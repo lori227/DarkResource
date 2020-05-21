@@ -1,4 +1,4 @@
-<root version="2436">
+<root platform="" version="4832">
 	<item Id="3180101" Type="1801" Consume="[[1,1,100]]" NeedNum="500" />
 	<item Id="3180102" Type="1801" Consume="[[1,1,200]]" NeedNum="1000" />
 	<item Id="3180103" Type="1801" Consume="[[1,1,600],[2,1000401,1],[2,1000402,1]]" NeedNum="3000" />
