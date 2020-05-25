@@ -211,6 +211,12 @@ enum FunctionEnum
 	NecklaceEmbryo = 102;	// 项链胚胎
 	ProgressText = 103;		// 进度文本
 	DescButton = 104;		// 说明按钮
-	
-	
+}
+
+// 里世界类型
+enum InnerWorldEnum
+{
+	InnerWorldInvalid = 0;	// 无效
+
+	NamelessMist = 1;		// 无名之雾
 }
